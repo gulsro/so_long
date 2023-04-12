@@ -1,41 +1,30 @@
-NAME = so_long
+NAME	:= so_long
+CFLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast
+LIBMLX	:= ./lib/MLX42
 
-SRC = main.c  
+HEADERS	:= -I ./include -I $(LIBMLX)/include
+LIBS	:= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
+SRCS	:= $(shell find ./ -iname "*.c")
+OBJS	:= ${SRCS:.c=.o}
 
-HEADER = -I lib/MLX42/include/MLX42
-
-CC = gcc
-
-OBJ = $(SRC:.c= .o)
-
-CLAGS = -Werror -Wextra -Wall
-
-LIBMLX_DIR = ./lib/MLX42
-
-LIBMLX = $(LIBMLX_DIR)/build/libmlx42.a -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
-
-all: $(NAME) libmlx
+all: libmlx $(NAME)
 
 libmlx:
-	@cmake $(LIBMLX_DIR) -B $(LIBMLX_DIR)/build && make -C $(LIBMLX_DIR)/build -j4
+	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
-$(NAME):	$(OBJ)
-		$(CC) $(CFLAGS) $(LIBMLX) -o $(NAME) $(OBJ) $(HEADER)
+%.o: %.c
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compiling: $(notdir $<)"
 
-%.o: %.c 
-		$(CC) $(CFLAGS) $(HEADER) -c $< -o $(<:.c=.o)
+$(NAME): $(OBJS)
+	@$(CC) $(OBJS) $(LIBS) $(HEADERS) -o $(NAME)
 
 clean:
-		rm -f $(LIBMLX_DIR)
-		rm -f $(OBJ)
+	@rm -rf $(OBJS)
+	@rm -rf $(LIBMLX)/build
 
-fclean:		clean
-		rm -f $(NAME)
-		rm -f $(LIBMLX_DIR)
+fclean: clean
+	@rm -rf $(NAME)
 
-re:		fclean all
+re: clean all
 
-.PHONY:	all clean fclean re bonus
-
-
-
+.PHONY: all, clean, fclean, re, libmlx
