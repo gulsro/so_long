@@ -1,11 +1,11 @@
-NAME	:= so_long
-CFLAGS	:= -Wextra -Wall -Werror
-LIBMLX	:= ./lib/MLX42
+NAME	= so_long
+CFLAGS	= -Wextra -Wall -Werror
+LIBMLX	= ./lib/MLX42
 
-HEADERS	:= -I $(LIBMLX)/include/
-LIBS	:= $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
-SRCS	:= main.c
-OBJS	:= ${SRCS:.c=.o}
+HEADERS	= -I $(LIBMLX)/include/
+LIBS	= $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
+SRCS	= main.c
+OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)
 
