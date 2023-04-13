@@ -1,4 +1,6 @@
 #include "lib/MLX42/include/MLX42/MLX42.h"
+#include <stdio.h>
+#include <stdlib.h>
 #define WIDTH 800
 #define HEIGHT 400
 
