@@ -42,7 +42,7 @@ int main()
 		while (j < 64)
 		{
 			mlx_put_pixel(img, i, j, 0xF70AF0B3);
-	//		mlx_put_pixel(img, i, 50, 0xFFFFFFFF);
+//			mlx_put_pixel(img, i, j, 0xFFFFFFFF);
 			j++;
 		}
 		i++;
