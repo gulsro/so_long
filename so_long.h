@@ -9,7 +9,18 @@
 # include "lib/MLX42/include/MLX42/MLX42.h"
 
 # include <libft.h>
-//# include <get_next_line.h>
-//# include <ft_printf.h>
-//
+# include <get_next_line.h>
+# include <ft_printf.h>
+
+typedef struct s_map
+{
+	char 	**map_arr;
+	int	width_x;
+	int	height_y;
+	int	count_e;
+	int	count_p;
+	int	count_c;
+
+}	t_map;
+
 #endif

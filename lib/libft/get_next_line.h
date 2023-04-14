@@ -22,7 +22,7 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(char *str);
+size_t	gnl_strlen(char *str);
 char	*free_stash(char *stash);
 char	*make_string(size_t length);
 char	*shift_stash(char *stash);

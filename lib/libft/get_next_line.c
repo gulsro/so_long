@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
+size_t	gnl_strlen(char *str)
 {
 	size_t	i;
 
@@ -88,7 +88,7 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (free(stash), NULL);
 	stash = shift_stash(stash);
-	if (stash && ft_strlen(stash) == 0)
+	if (stash && gnl_strlen(stash) == 0)
 		stash = free_stash(stash);
 	return (line);
 }

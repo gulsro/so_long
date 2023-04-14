@@ -17,7 +17,7 @@ size_t	check_newline(char *buf)
 	size_t	n;
 
 	n = 0;
-	if (!buf || ft_strlen(buf) == 0)
+	if (!buf || gnl_strlen(buf) == 0)
 		return (0);
 	while (buf[n] != '\0')
 	{
@@ -34,7 +34,7 @@ char	*fill_line(char *stash)
 	size_t	i;
 
 	i = 0;
-	filled_line = make_string(ft_strlen(stash) + 1);
+	filled_line = make_string(gnl_strlen(stash) + 1);
 	if (!filled_line)
 		return (NULL);
 	while (stash[i] != '\0')
@@ -57,9 +57,9 @@ char	*shift_stash(char *stash)
 	i_stash = 0;
 	i_shift = 0;
 	pos = check_newline(stash);
-	if (pos == ft_strlen(stash))
+	if (pos == gnl_strlen(stash))
 		return (free(stash), NULL);
-	shifted = make_string(ft_strlen(stash) - pos);
+	shifted = make_string(gnl_strlen(stash) - pos);
 	if (!shifted)
 		return (free(stash), NULL);
 	while (stash[i_stash] != '\0')
@@ -90,7 +90,7 @@ char	*from_buf_to_stash(char *prev_stash, char *buf)
 		if (!prev_stash)
 			return (NULL);
 	}
-	new_stash = make_string(ft_strlen(prev_stash) + BUFFER_SIZE + 1);
+	new_stash = make_string(gnl_strlen(prev_stash) + BUFFER_SIZE + 1);
 	if (!new_stash)
 		return (free(prev_stash), NULL);
 	while (prev_stash[stash_i] != '\0')
