@@ -1,10 +1,11 @@
 NAME	= so_long
 CFLAGS	= -Wextra -Wall -Werror
 LIBMLX	= ./lib/MLX42
+LIBFT	= ./lib/libft/libft.a
 
-HEADERS	= -I $(LIBMLX)/include/
-#LIBS	= $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
-LIBS   = $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
+HEADERS	= -I ./lib/libft/ -I $(LIBMLX)/include/
+LIBS	= $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw #-L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
+#LIBS   = $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
 SRCS	= main.c
 OBJS	= $(SRCS:.c=.o)
 
@@ -17,11 +18,13 @@ libmlx:
 	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) $(LIBS) $(HEADERS) -o $(NAME)
+	$(MAKE) -C ./lib/libft
+	@$(CC) $(OBJS) $(LIBFT) $(LIBS) $(HEADERS) -o $(NAME)
 
 clean:
 	@rm -rf $(OBJS)
 	@rm -rf $(LIBMLX)/build
+	@rm -f ./lib/libft/*.o ./lib/libft/*.a
 
 fclean: clean
 	@rm -rf $(NAME)

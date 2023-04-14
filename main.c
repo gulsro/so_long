@@ -1,7 +1,9 @@
-#include "lib/MLX42/include/MLX42/MLX42.h"
+/*#include "lib/MLX42/include/MLX42/MLX42.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h>*/
+#include "so_long.h"
+
 #define WIDTH 800
 #define HEIGHT 400
 #define BPP sizeof(int32_t)
