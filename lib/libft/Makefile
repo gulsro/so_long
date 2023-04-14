@@ -45,7 +45,18 @@ SRC = ft_atoi.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
-			ft_split.c 
+			ft_split.c \
+			get_next_line.c \
+			get_next_line_utils.c \
+			./libftprintf/ft_putchar.c \
+			./libftprintf/ft_putnbr.c \
+			./libftprintf/ft_strlen.c \
+			./libftprintf/ft_putstr.c \
+			./libftprintf/ft_puthexlow.c \
+			./libftprintf/ft_puthexupp.c \
+			./libftprintf/ft_putaddr.c \
+			./libftprintf/ft_putunsigned.c \
+        		ft_printf.c
 
 SRCB = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
@@ -55,7 +66,7 @@ SRCB = ft_lstnew_bonus.c \
 			ft_lstdelone_bonus.c \
 			ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c \
-		   	ft_lstmap_bonus.c	
+		   	ft_lstmap_bonus.c
 
 CC = cc
 
