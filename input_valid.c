@@ -19,9 +19,10 @@ int	open_file(int argc, char **argv)
 	}
 	return (fd);
 }
+
 char **read_pass_arr(int fd)
 {
-	char	*buf;
+	char	*content;
 
         while (1)
         {

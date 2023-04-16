@@ -15,6 +15,7 @@
 typedef struct s_map
 {
 	char 	**map_arr;
+	char	*content;
 	int	width_x;
 	int	height_y;
 	int	count_e;
