@@ -24,4 +24,13 @@ typedef struct s_map
 
 }	t_map;
 
+//input_valid.c
+char	*append_line_to_map(char *map, char *line);
+char	**make_map_arr(int fd);
+int		ft_strlen_protect(char *str);
+int		open_file(int argc, char **argv);
+
+//error_exit.c
+void	ft_exit(char *error_msg, int exit_code);
+
 #endif
