@@ -28,7 +28,7 @@ typedef struct s_map
 char	*append_line_to_map(char *map, char *line);
 char	**make_map_arr(int fd);
 int		ft_strlen_protect(char *str);
-int		open_file(int argc, char **argv);
+int		open_file(char **argv);
 
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);

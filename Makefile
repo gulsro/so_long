@@ -6,7 +6,9 @@ LIBFT	= ./lib/libft/libft.a
 HEADERS	= -I ./lib/libft/ -I $(LIBMLX)/include/
 #LIBS	= $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw #-L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
 LIBS   = $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
-SRCS	= main.c
+SRCS	= main.c \
+		  input_valid.c \
+		  error_exit.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)

@@ -16,7 +16,7 @@ int	ft_strlen_protect(char *str)
 	return (i);
 }
 
-int	open_file(int argc, char **argv)
+int	open_file(char **argv)
 {
 	int     fd;
 
@@ -66,12 +66,17 @@ char	**make_map_arr(int fd)
 	char	*map;
 	char	*line;
 
-
+	map = NULL;
+	line = NULL;
 	while (1)
 	{
 		line = get_next_line(fd);
 		if (!line)
 			break ;
-		
+		map = append_line_to_map(map, line);
 	}
+	map_arr = ft_split(map, '\n');
+	if (!map_arr)
+		ft_exit("Map_arr failed.", 1);
+	return (map_arr);
 }
