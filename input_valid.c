@@ -32,7 +32,7 @@ int	open_file(char **argv)
 	return (fd);
 }
 
-char	*append_line_to_map(char *map, char *line)
+static char	*append_line_to_map(char *map, char *line)
 {
 	int		line_i;
 	int		map_i;
@@ -68,17 +68,19 @@ char	*append_line_to_map(char *map, char *line)
 	return (free(map), appended);
 }
 
-char	**make_map_arr(int fd)
+char	**make_map_arr(t_map   *my_map, int fd)
 {
 	char	**map_arr;
 	char	*map;
 	char	*line;
 
+	my_map->height_y = -1;
 	map = NULL;
 	line = NULL;
 	while (1)
 	{
 		line = get_next_line(fd);
+		my_map->height_y++;
 		if (!line)
 			break ;
 		map = append_line_to_map(map, line);

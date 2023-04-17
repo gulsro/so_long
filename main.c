@@ -2,16 +2,21 @@
 
 int main(int argc, char **argv)
 {
+	t_map	*my_map;
 	int		fd;
 	char	**map_arr;
 
 	if (argc != 2)
 		ft_exit("argc", 1);
+	my_map = malloc(sizeof(t_map));
+	my_map->height_y = 0;
 	fd = open_file(argv);
-	map_arr = make_map_arr(fd);
-	for(int i = 0; i < 7; i++)
+	map_arr = make_map_arr(my_map, fd);
+	map_height(fd);
+	printf("lines: %d \n", my_map->height_y);
+	for(int i = 0; i < 18; i++)
 	{
-		printf("map elements: %s\n", map_arr[i]);
+		printf("map elements: %c\n", map_arr[1][i]);
 	}
 
 
