@@ -15,6 +15,7 @@ int	ft_strlen_protect(char *str)
 	}
 	return (i);
 }
+
 int	open_file(int argc, char **argv)
 {
 	int     fd;
@@ -34,7 +35,7 @@ int	open_file(int argc, char **argv)
 char	*append_line_to_map(char *map, char *line)
 {
 	int		line_i;
-	int		map_i
+	int		map_i;
 	char	*appended;
 
 	if (map == NULL)
@@ -52,11 +53,11 @@ char	*append_line_to_map(char *map, char *line)
 	map_i = -1;
 	while (map[map_i++] != '\0')
 		appended[map_i] = map[map_i];
-	line_i = -1;
-	while (len[len_i++] != '\0')
-		appended[map_i] = len[len_i];
+	line_i = 0;
+	while (line[line_i] != '\0')
+		appended[map_i++] = line[line_i++];
 	appended[map_i] = '\0';
-	return (free(line), appended);
+	return (free(map), appended);
 }
 
 char	**make_map_arr(int fd)

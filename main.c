@@ -10,4 +10,8 @@ int main(int argc, char **argv)
 	fd = open_file(argc, argv);
 	read_pass_arr(fd);
 
+	char *map = "banana";
+    char *line = "lemonade";
+    printf("new string is: %s\n", append_line_to_map(map, line));
+
 }
