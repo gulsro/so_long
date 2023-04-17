@@ -50,13 +50,21 @@ char	*append_line_to_map(char *map, char *line)
 		free(map);
 		ft_exit("Appended calloc failed.", 1);
 	}
-	map_i = -1;
-	while (map[map_i++] != '\0')
+	map_i = 0;
+	while (map[map_i] != '\0')
+	{
 		appended[map_i] = map[map_i];
+		map_i++;
+	}
 	line_i = 0;
 	while (line[line_i] != '\0')
 		appended[map_i++] = line[line_i++];
 	appended[map_i] = '\0';
+	if (line)
+	{
+		free(line);
+		line = NULL;
+	}
 	return (free(map), appended);
 }
 
@@ -74,9 +82,12 @@ char	**make_map_arr(int fd)
 		if (!line)
 			break ;
 		map = append_line_to_map(map, line);
+		if (!map)
+			return (NULL);
 	}
 	map_arr = ft_split(map, '\n');
 	if (!map_arr)
 		ft_exit("Map_arr failed.", 1);
+	free(map);
 	return (map_arr);
 }
