@@ -18,16 +18,26 @@ int main(int argc, char **argv)
 	
 	//wall valid
 	printf("rect, walls and chars are all good: %d\n", check_all(my_map));
-	/*	printf("walls surround: %d\n", check_side_walls(my_map));
-	printf("walls are rectangular: %d\n", check_rectangular_map(my_map));	
-	printf("chars in map are okay: %d\n", check_number_of_ecp(my_map));
-*/
-	char **cpy_arr;
-	cpy_arr = create_map_arr_cpy(my_map);
-	for(int i = 0; i < 5; i++)
-	{
-		printf("map elements: %s\n", cpy_arr[i]);
-	}
 
+	//check if map_arr can be doubled
+//	char **cpy_arr;
+	 create_map_arr_cpy(my_map);
+	int i = 0;
+	while (my_map->cpy_arr[i])
+	{
+		printf("map elements: %s\n", my_map->cpy_arr[i]);
+		i++;
+	}
+	printf("----------------------\n");
+	int j = 0;
+    while (my_map->map_arr[j])
+    {
+        printf("map elements: %s\n", my_map->map_arr[j]);
+        j++;
+    }
+	//find player location
+	find_player(my_map);
+	printf("location of the player is: %d, %d\n", my_map->x_p_location, my_map->y_p_location);
+	
 
 }

@@ -1,5 +1,5 @@
 NAME	= so_long
-CFLAGS	= -Wextra -Wall -Werror
+CFLAGS	= -Wextra -Wall -Werror -g
 LIBMLX	= ./lib/MLX42
 LIBFT	= ./lib/libft/libft.a
 
@@ -10,7 +10,8 @@ SRCS	= main.c \
 		  input_valid.c \
 		  error_exit.c \
 		  map_valid.c \
-		  map_utils.c
+		  map_utils.c \
+		  walkable_map.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)

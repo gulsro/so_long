@@ -19,20 +19,22 @@ void    map_scale(t_map *my_map)
 	my_map->width_x = j;
 }
 
-char	**create_map_arr_cpy(t_map *my_map)
+void	create_map_arr_cpy(t_map *my_map)
 {
 	int		i;
-	char	**cpy_arr;
+//	char	**cpy_arr;
 	
 	i = 0;
-	cpy_arr = ft_calloc(sizeof(char), my_map->height_y + 1);
-	if (!cpy_arr)
-		ft_exit("Map array cant be copied", 1);
+	my_map->cpy_arr = ft_calloc(sizeof(char), my_map->height_y + 1);
+//	if (!cpy_arr)
+//		ft_exit("Map array cant be copied", 1);
 	while (my_map->map_arr[i] != '\0')
 	{
-		cpy_arr[i] = ft_strdup(my_map->map_arr[i]);
+//		cpy_arr[i] = ft_strdup(my_map->map_arr[i]);
+		my_map->cpy_arr[i] = ft_strdup(my_map->map_arr[i]);
 		i++;
 	}
-	cpy_arr[i] = NULL;
-	return (cpy_arr);
+//	cpy_arr[i] = NULL;
+	my_map->cpy_arr[i] = NULL;
+	//return (my_map->cpy_arr);
 }
