@@ -17,10 +17,15 @@ int main(int argc, char **argv)
 	printf("height: %d \n", my_map->height_y);
 	printf("width: %d \n", my_map->width_x);
 	
-	for(int i = 0; i < 18; i++)
+	//wall valid
+	printf("walls are good: %d\n", check_side_walls(my_map));
+	
+
+/*	for(int i = 0; i < 18; i++)
 	{
 		printf("map elements: %c\n", map_arr[1][i]);
+		
 	}
-
+*/
 
 }
