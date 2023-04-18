@@ -22,12 +22,12 @@ int main(int argc, char **argv)
 	printf("walls are rectangular: %d\n", check_rectangular_map(my_map));	
 	printf("chars in map are okay: %d\n", check_number_of_ecp(my_map));
 */
-
-/*	for(int i = 0; i < 18; i++)
+	char **cpy_arr;
+	cpy_arr = create_map_arr_cpy(my_map);
+	for(int i = 0; i < 5; i++)
 	{
-		printf("map elements: %c\n", map_arr[1][i]);
-		
+		printf("map elements: %s\n", cpy_arr[i]);
 	}
-*/
+
 
 }
