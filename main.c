@@ -9,7 +9,6 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		ft_exit("argc", 1);
 	my_map = malloc(sizeof(t_map));
-	my_map->height_y = 0;
 	fd = open_file(argv);
 	map_arr = make_map_arr(my_map, fd);
 	
@@ -18,8 +17,8 @@ int main(int argc, char **argv)
 	printf("width: %d \n", my_map->width_x);
 	
 	//wall valid
-	printf("walls are good: %d\n", check_side_walls(my_map));
-	
+	printf("walls surround: %d\n", check_side_walls(my_map));
+	printf("walls are rectangular: %d\n", check_rectangular_map(my_map));	
 
 /*	for(int i = 0; i < 18; i++)
 	{

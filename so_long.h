@@ -33,6 +33,9 @@ int		open_file(char **argv);
 //map_valid.c
 void	map_scale(t_map *my_map);
 int		check_side_walls(t_map  *my_map);
+int		check_rectangular_map(t_map *my_map);
+
+
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);
 

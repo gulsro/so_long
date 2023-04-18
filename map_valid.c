@@ -49,3 +49,11 @@ int check_side_walls(t_map	*my_map)
 	return (1);
 }	
 
+int	check_rectangular_map(t_map *my_map)
+{
+	return ((my_map->width_x > my_map->height_y) 
+			|| (my_map->width_x < my_map->height_y));
+}
+
+
+
