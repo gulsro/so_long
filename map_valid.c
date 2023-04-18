@@ -65,7 +65,9 @@ int	check_number_of_ecp(t_map *my_map)
 		}
 		i++;
 	}
-	if (e > 0 && c > 0 && p > 0)
+	if (e > 1 || p > 1)
+		ft_exit("Error: Check number of E or P in the map.", 1);
+	if (e == 1 && c > 0 && p == 1)
 		return (1);
 	return (0);
 }
