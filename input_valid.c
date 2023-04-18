@@ -68,28 +68,25 @@ static char	*append_line_to_map(char *map, char *line)
 	return (free(map), appended);
 }
 
-char	**make_map_arr(t_map   *my_map, int fd)
+char	**make_map_arr(t_map *my_map, int fd)
 {
-	char	**map_arr;
 	char	*map;
 	char	*line;
 
-	my_map->height_y = -1;
 	map = NULL;
 	line = NULL;
 	while (1)
 	{
 		line = get_next_line(fd);
-		my_map->height_y++;
 		if (!line)
 			break ;
 		map = append_line_to_map(map, line);
 		if (!map)
 			return (NULL);
 	}
-	map_arr = ft_split(map, '\n');
-	if (!map_arr)
+	my_map->map_arr = ft_split(map, '\n');
+	if (!my_map->map_arr)
 		ft_exit("Map_arr failed.", 1);
 	free(map);
-	return (map_arr);
+	return (my_map->map_arr);
 }

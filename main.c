@@ -12,8 +12,11 @@ int main(int argc, char **argv)
 	my_map->height_y = 0;
 	fd = open_file(argv);
 	map_arr = make_map_arr(my_map, fd);
-	map_height(fd);
-	printf("lines: %d \n", my_map->height_y);
+	
+	map_scale(my_map);
+	printf("height: %d \n", my_map->height_y);
+	printf("width: %d \n", my_map->width_x);
+	
 	for(int i = 0; i < 18; i++)
 	{
 		printf("map elements: %c\n", map_arr[1][i]);

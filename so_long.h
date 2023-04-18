@@ -31,7 +31,7 @@ int		ft_strlen_protect(char *str);
 int		open_file(char **argv);
 
 //map_valid.c
-int	map_height(int fd);
+void	map_scale(t_map *my_map);
 
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);
