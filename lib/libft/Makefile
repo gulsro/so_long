@@ -6,7 +6,7 @@
 #    By: gozturk <gozturk@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/11 18:39:50 by gozturk       #+#    #+#                  #
-#    Updated: 2022/11/07 18:05:39 by gozturk       ########   odam.nl          #
+#    Updated: 2023/04/18 18:05:11 by gozturk       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,6 +95,7 @@ $(NAME) : $(OBJ)
 
 clean :
 			rm -f $(OBJ) $(OBJB)
+			rm -f ./libftprintf/*.o
 
 fclean :	clean
 			rm -f $(NAME)

@@ -30,6 +30,7 @@ clean:
 	@rm -rf $(OBJS)
 	@rm -rf $(LIBMLX)/build
 	@rm -f ./lib/libft/*.o ./lib/libft/*.a
+	@rm -f ./lib/libft/libftprintf/*.o 
 
 fclean: clean
 	@rm -rf $(NAME)
