@@ -15,7 +15,6 @@
 typedef struct s_map
 {
 	char 	**map_arr;
-	char	*content;
 	int	width_x;
 	int	height_y;
 	int	count_e;
@@ -30,11 +29,14 @@ char	**make_map_arr(t_map   *t_map, int fd);
 int		ft_strlen_protect(char *str);
 int		open_file(char **argv);
 
-//map_valid.c
+//map_utils.c
 void	map_scale(t_map *my_map);
-int		check_side_walls(t_map  *my_map);
-int		check_rectangular_map(t_map *my_map);
 
+//map_valid.c
+int	check_walls(t_map  *my_map);
+int	check_rectangular_map(t_map *my_map);
+int	check_number_of_ecp(t_map *my_map);
+int	check_all(t_map *my_map);
 
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);

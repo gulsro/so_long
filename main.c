@@ -17,8 +17,11 @@ int main(int argc, char **argv)
 	printf("width: %d \n", my_map->width_x);
 	
 	//wall valid
-	printf("walls surround: %d\n", check_side_walls(my_map));
+	printf("rect, walls and chars are all good: %d\n", check_all(my_map));
+	/*	printf("walls surround: %d\n", check_side_walls(my_map));
 	printf("walls are rectangular: %d\n", check_rectangular_map(my_map));	
+	printf("chars in map are okay: %d\n", check_number_of_ecp(my_map));
+*/
 
 /*	for(int i = 0; i < 18; i++)
 	{

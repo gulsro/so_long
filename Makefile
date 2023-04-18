@@ -9,7 +9,8 @@ LIBS   = $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw3 -framework Cocoa -framewor
 SRCS	= main.c \
 		  input_valid.c \
 		  error_exit.c \
-		  map_valid.c
+		  map_valid.c \
+		  map_utils.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)
