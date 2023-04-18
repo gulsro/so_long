@@ -41,11 +41,9 @@ int	check_number_of_ecp(t_map *my_map)
 	int	i;
 	int	j;
 	int	e;
-	int	c;
 	int	p;
 
 	e = 0;
-	c = 0;
 	p = 0;
 	i = 0;
 	while (my_map->map_arr[i] != '\0')
@@ -58,7 +56,7 @@ int	check_number_of_ecp(t_map *my_map)
 			if (my_map->map_arr[i][j] == 'E')
 				e++;
 			if (my_map->map_arr[i][j] == 'C')
-                c++;
+                my_map->count_c++;
 			if (my_map->map_arr[i][j] == 'P')
                 p++;
 			j++;
@@ -67,7 +65,7 @@ int	check_number_of_ecp(t_map *my_map)
 	}
 	if (e > 1 || p > 1)
 		ft_exit("Error: Check number of E or P in the map.", 1);
-	if (e == 1 && c > 0 && p == 1)
+	if (e == 1 && my_map->count_c > 0 && p == 1)
 		return (1);
 	return (0);
 }

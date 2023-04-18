@@ -18,6 +18,7 @@ typedef struct s_map
 	char	**cpy_arr;
 	int		width_x;
 	int		height_y;
+	int		count_c;
 	int		x_p_location;
 	int		y_p_location;
 
