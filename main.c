@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 	my_map = malloc(sizeof(t_map));
 	if (!my_map)
 		ft_exit("My_map malloc failed", 1);
-/*	init_map_struct(my_map);
+	init_map_struct(my_map);
 	if (check_map(my_map, argv) == 0)
 	{
 		int i = 0;
@@ -18,7 +18,9 @@ int main(int argc, char **argv)
                 	printf("map elements: %s\n", my_map->cpy_arr[i]);
                 	i++;
         	}
-	}*/
+	}
+	return 0;
+	/*
 	int	fd = open_file(argv[1]);
 	make_map_arr(my_map, fd);
 	
@@ -71,5 +73,5 @@ int main(int argc, char **argv)
         n++;
     }
 //    printf("After move() chars in cpy_arr are valid: %d\n", check_valid_chars_after_move(last_map));
-
+*/
 }

@@ -4,6 +4,7 @@ void    init_map_struct(t_map *my_map)
 {
 	my_map->map_arr = NULL;
 	my_map->cpy_arr = NULL;
+	my_map->count_c = 0;
 	my_map->width_x = 0;
 	my_map->height_y = 0;
 	my_map->x_p_location = 0;
@@ -18,6 +19,7 @@ int	check_map(t_map *my_map, char **argv)
 
 	fd = open_file(argv[1]);
 	make_map_arr(my_map, fd);
+	map_scale(my_map);
 	if (check_all(my_map) != 1)
 		return (1);
 	find_player(my_map);
