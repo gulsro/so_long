@@ -6,7 +6,7 @@ int check_walls(t_map	*my_map)
 	int	y;
 
 	y = 0;
-	while (my_map->map_arr[y] != '\0')
+	while (my_map->map_arr[y])
 	{
 		if (my_map->map_arr[y][0] != '1' 
 				|| my_map->map_arr[y][my_map->width_x - 1] != '1')
@@ -14,7 +14,7 @@ int check_walls(t_map	*my_map)
 		y++;
 	}
 	x = 0;
-	while (my_map->map_arr[0][x] != '\0' 
+	while (my_map->map_arr[0][x] 
 			&& my_map->map_arr[my_map->height_y - 1][x] != '\0')
 	{
 		if (my_map->map_arr[0][x] != '1' 
@@ -46,10 +46,10 @@ int	check_number_of_ecp(t_map *my_map)
 	e = 0;
 	p = 0;
 	i = 0;
-	while (my_map->map_arr[i] != '\0')
+	while (my_map->map_arr[i])
 	{
 		j = 0;
-		while (my_map->map_arr[i][j] != '\0')
+		while (my_map->map_arr[i][j])
 		{
 			if (check_char(my_map->map_arr[i][j]) != 1)
 				return (0);

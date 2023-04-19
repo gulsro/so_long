@@ -17,10 +17,10 @@ void	find_player(t_map *my_map)
 	i = 0;
 	my_map->x_p_location = 0;
 	my_map->y_p_location = 0;
-	while (my_map->map_arr[i] != '\0')
+	while (my_map->map_arr[i])
 	{
 		j = 0;
-		while (my_map->map_arr[i][j] != '\0')
+		while (my_map->map_arr[i][j])
 		{
 			if (my_map->map_arr[i][j] == 'P')
 			{
@@ -32,7 +32,7 @@ void	find_player(t_map *my_map)
 		i++;
 	}
 }
-
+/*
 void	move(t_map *my_map, char **cpy_arr, int new_x, int new_y)
 {
 	create_map_arr_cpy(my_map);
@@ -45,4 +45,4 @@ void	move(t_map *my_map, char **cpy_arr, int new_x, int new_y)
 			
 	}
 
-}
+}*/
