@@ -24,11 +24,14 @@ typedef struct s_map
 
 }t_map;
 
+//init_map.c
+void    init_map_struct(t_map *my_map);
+int    check_map(t_map *my_map, char **argv);
+
 //input_valid.c
-//char	*append_line_to_map(char *map, char *line);
 void	make_map_arr(t_map   *t_map, int fd);
 int		ft_strlen_protect(char *str);
-int		open_file(char **argv);
+int		open_file(char *argv);
 
 //map_utils.c
 void	map_scale(t_map *my_map);
