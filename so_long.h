@@ -33,7 +33,7 @@ int		open_file(char **argv);
 //map_utils.c
 void	map_scale(t_map *my_map);
 //char	**create_map_arr_cpy(t_map *my_map);
-void	create_map_arr_cpy(t_map *my_map);
+char	**create_map_arr_cpy(t_map *my_map);
 
 //map_valid.c
 int	check_walls(t_map  *my_map);
@@ -44,6 +44,7 @@ int	check_all(t_map *my_map);
 //walkable_path.c
 int		is_walkable(t_map *my_map, int new_x, int new_y);
 void	find_player(t_map *my_path);
+char	**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos);
 
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);

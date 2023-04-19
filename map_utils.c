@@ -19,7 +19,7 @@ void    map_scale(t_map *my_map)
 	my_map->width_x = j;
 }
 
-void	create_map_arr_cpy(t_map *my_map)
+char	**create_map_arr_cpy(t_map *my_map)
 {
 	int		i;
 
@@ -33,4 +33,5 @@ void	create_map_arr_cpy(t_map *my_map)
 		i++;
 	}
 	my_map->cpy_arr[i] = NULL;
+	return (my_map->cpy_arr);
 }
