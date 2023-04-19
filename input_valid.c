@@ -40,7 +40,7 @@ static char	*append_line_to_map(char *map, char *line)
 
 	if (map == NULL)
 	{
-		map = ft_calloc(sizeof(char), (ft_strlen_protect(line) + 1));
+		map = ft_calloc((ft_strlen_protect(line) + 1), sizeof(char));
 		if (map == NULL)
 			ft_exit("Map calloc failed.", 1);
 	}
@@ -68,7 +68,7 @@ static char	*append_line_to_map(char *map, char *line)
 	return (free(map), appended);
 }
 
-char	**make_map_arr(t_map *my_map, int fd)
+void	make_map_arr(t_map *my_map, int fd)
 {
 	char	*map;
 	char	*line;
@@ -82,11 +82,11 @@ char	**make_map_arr(t_map *my_map, int fd)
 			break ;
 		map = append_line_to_map(map, line);
 		if (!map)
-			return (NULL);
+			ft_exit("Map_arr cant be made.",1);
 	}
 	my_map->map_arr = ft_split(map, '\n');
 	if (!my_map->map_arr)
 		ft_exit("Map_arr failed.", 1);
 	free(map);
-	return (my_map->map_arr);
+//	return (my_map->map_arr);
 }

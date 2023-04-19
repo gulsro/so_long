@@ -26,7 +26,7 @@ typedef struct s_map
 
 //input_valid.c
 //char	*append_line_to_map(char *map, char *line);
-char	**make_map_arr(t_map   *t_map, int fd);
+void	make_map_arr(t_map   *t_map, int fd);
 int		ft_strlen_protect(char *str);
 int		open_file(char **argv);
 
