@@ -45,6 +45,7 @@ int	check_all(t_map *my_map);
 int		is_walkable(t_map *my_map, int new_x, int new_y);
 void	find_player(t_map *my_path);
 char	**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos);
+int     check_valid_chars_after_move(char **cpy_arr);
 
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);

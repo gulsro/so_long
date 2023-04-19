@@ -1,5 +1,5 @@
 NAME	= so_long
-CFLAGS	= -Wextra -Wall -Werror -g
+CFLAGS	= -Wextra -Wall -Werror -g -fsanitize=address
 LIBMLX	= ./lib/MLX42
 LIBFT	= ./lib/libft/libft.a
 

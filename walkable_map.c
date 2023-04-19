@@ -53,4 +53,26 @@ char	**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos)
 	return (cpy_arr);
 }
 
+int	check_valid_chars_after_move(char **cpy_arr)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (cpy_arr[i])
+	{
+		j = 0;
+		while (cpy_arr[i][j])
+		{
+			if (cpy_arr[i][j] != '1' && cpy_arr[i][j] != 'X' 
+					&& cpy_arr[i][j] != '0')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+
 

@@ -59,4 +59,5 @@ int main(int argc, char **argv)
         printf("map elements: %s\n", last_map[n]);
         n++;
     }
+//    printf("After move() chars in cpy_arr are valid: %d\n", check_valid_chars_after_move(last_map));
 }
