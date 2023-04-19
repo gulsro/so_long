@@ -1,7 +1,5 @@
 #include "so_long.h"
 
-//int	map_height(char *buf)
-
 int	ft_strlen_protect(char *str)
 {
 	int	i;
@@ -16,11 +14,15 @@ int	ft_strlen_protect(char *str)
 	return (i);
 }
 
-int	open_file(char **argv)
+int	open_file(char *argv)
 {
 	int     fd;
 
-	fd = open(argv[1], O_RDONLY);
+	if (ft_strncmp(argv + ft_strlen(argv) - 4, ".ber", 4) != 0)
+	{
+		ft_exit("Bad map file extension", 1);
+	}
+	fd = open(argv, O_RDONLY);
 	if (fd < 0)
 	{
 		ft_exit("Map file can not be opened", 1);

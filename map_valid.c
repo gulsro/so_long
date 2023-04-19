@@ -64,7 +64,7 @@ int	check_number_of_ecp(t_map *my_map)
 		i++;
 	}
 	if (e > 1 || p > 1)
-		ft_exit("Error: Check number of E or P in the map.", 1);
+		ft_exit("Error\nCheck number of E or P in the map.", 1);
 	if (e == 1 && my_map->count_c > 0 && p == 1)
 		return (1);
 	return (0);
@@ -72,6 +72,11 @@ int	check_number_of_ecp(t_map *my_map)
 
 int	check_all(t_map *my_map)
 {
-	return (check_number_of_ecp(my_map) && check_rectangular_map(my_map) 
-			&& check_walls(my_map));
+	if (check_walls(my_map) != 1)
+		ft_exit("Error\nThe map is not surrounded by the walls", 1);
+	if (check_rectangular_map(my_map) != 1)
+		ft_exit("Error\nThe map is not rectangular", 1);
+	if (check_number_of_ecp(my_map) != 1)
+		ft_exit("Error\nAmount of the characters is not correct.", 1);
+	return (1);
 }

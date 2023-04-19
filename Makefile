@@ -1,5 +1,5 @@
 NAME	= so_long
-CFLAGS	= -Wextra -Wall -Werror -g -fsanitize=address
+CFLAGS	= -Wextra -Wall -Werror -g #-fsanitize=address
 LIBMLX	= ./lib/MLX42
 LIBFT	= ./lib/libft/libft.a
 
@@ -11,7 +11,8 @@ SRCS	= main.c \
 		  error_exit.c \
 		  map_valid.c \
 		  map_utils.c \
-		  walkable_map.c
+		  walkable_map.c \
+		  init_map.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)

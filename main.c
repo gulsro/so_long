@@ -3,12 +3,23 @@
 int main(int argc, char **argv)
 {
 	t_map	*my_map;
-	int		fd;
 
 	if (argc != 2)
 		ft_exit("argc", 1);
 	my_map = malloc(sizeof(t_map));
-	fd = open_file(argv);
+	if (!my_map)
+		ft_exit("My_map malloc failed", 1);
+/*	init_map_struct(my_map);
+	if (check_map(my_map, argv) == 0)
+	{
+		int i = 0;
+		while (my_map->cpy_arr[i])
+		{
+                	printf("map elements: %s\n", my_map->cpy_arr[i]);
+                	i++;
+        	}
+	}*/
+	int	fd = open_file(argv[1]);
 	make_map_arr(my_map, fd);
 	
 	map_scale(my_map);
@@ -60,4 +71,5 @@ int main(int argc, char **argv)
         n++;
     }
 //    printf("After move() chars in cpy_arr are valid: %d\n", check_valid_chars_after_move(last_map));
+
 }
