@@ -29,9 +29,9 @@ int main(int argc, char **argv)
 	{
 		mlx = window_init();
 		make_image(mlx, graphs);
-		display_grass(mlx, graphs);
-		display_bag(mlx, graphs);
-		display_bin(mlx, graphs, my_map);
+		display_grass(mlx, graphs, my_map);
+//		display_bag(mlx, graphs);
+//		display_bin(mlx, graphs, my_map);
 		mlx_loop(mlx);
     mlx_terminate(mlx);
 		int i = 0;

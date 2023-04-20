@@ -61,7 +61,7 @@ void	display_bin(mlx_t *mlx, t_graphs *graphs, t_map *my_map)
     }
 }
 
-void    display_grass(mlx_t *mlx, t_graphs *graphs)
+void    display_grass(mlx_t *mlx, t_graphs *graphs, t_map *my_map)
 {
     uint32_t    i;
     uint32_t    j;
@@ -73,7 +73,7 @@ void    display_grass(mlx_t *mlx, t_graphs *graphs)
         j = 0;
         while (j < 64)
         {
-            mlx_image_to_window(mlx, graphs->grass_img, (mlx->width)/2-(graphs->grass_img->width)/2, (mlx->height)/2-(graphs->grass_img->height)/2);
+            mlx_image_to_window(mlx, graphs->grass_img, my_map->width_x, my_map->height_y);
             j++;
         }
         i++;

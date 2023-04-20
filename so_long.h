@@ -49,7 +49,7 @@ void    make_image(mlx_t *mlx, t_graphs *graphs);
 //window.c
 void    display_poop(mlx_t *mlx, t_graphs *graphs);
 void    display_bin(mlx_t *mlx, t_graphs *graphs, t_map *my_map);
-void    display_grass(mlx_t *mlx, t_graphs *graphs);
+void    display_grass(mlx_t *mlx, t_graphs *graphs, t_map *my_map);
 void    display_bag(mlx_t *mlx, t_graphs *graphs);
 void    display_wall(mlx_t *mlx, t_graphs *graphs);
 
