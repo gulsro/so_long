@@ -26,3 +26,12 @@ void	make_image(mlx_t *mlx, t_graphs *graphs)
 	graphs->bag_img = mlx_texture_to_image(mlx, graphs->bag_text);
 	graphs->wall_img = mlx_texture_to_image(mlx, graphs->wall_text);
 }
+
+void	image_to_window(mlx_t *mlx, t_graphs *graphs, t_map *my_map)
+{
+	display_grass(mlx, graphs, my_map);
+	display_wall(mlx, graphs, my_map);
+	display_bin(mlx, graphs, my_map);
+	display_poop(mlx, graphs, my_map);
+	display_bag(mlx, graphs, my_map);
+}
