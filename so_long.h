@@ -12,6 +12,10 @@
 # include <get_next_line.h>
 # include <ft_printf.h>
 
+# define WIDTH 800
+# define HEIGHT 400
+# define BPP sizeof(int32_t)
+
 typedef struct s_map
 {
 	char 	**map_arr;
@@ -23,6 +27,10 @@ typedef struct s_map
 	int		y_p_location;
 
 }t_map;
+
+//window.c
+mlx_t *window_init(void);
+void    display_image(mlx_t *mlx);
 
 //init_map.c
 void    init_map_struct(t_map *my_map);
