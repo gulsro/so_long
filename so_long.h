@@ -28,6 +28,21 @@ typedef struct s_map
 
 }t_map;
 
+typedef struct s_graphs
+{
+	mlx_texture_t	*bin_text;
+	mlx_image_t		*bin_img;
+	mlx_texture_t	*poop_text;
+	mlx_image_t		*poop_img;
+	mlx_texture_t	*grass_text;
+	mlx_image_t		*grass_img;
+	mlx_texture_t	*bag_text;
+	mlx_image_t		*bag_img;
+	mlx_texture_t	*wall_text;
+	mlx_image_t		*wall_img;
+
+}t_graphs;
+
 //window.c
 mlx_t *window_init(void);
 void    display_image(mlx_t *mlx);
