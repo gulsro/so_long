@@ -35,11 +35,7 @@ void	find_player(t_map *my_map)
 
 char	**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos)
 {
-//	create_map_arr_cpy(my_map);
-//	find_player(my_map);
-	//we have old positions via find_player() so that i dont have any arguments to hold old pos. in function
 	if (cpy_arr[y_pos][x_pos] != '1')
-//	if (my_map->cpy_arr[my_map->y_p_location][my_map->x_p_location] != '1')
 	{
 		if (is_walkable(my_map, x_pos, y_pos) == 1)
 			 cpy_arr[y_pos][x_pos] = 'X';
