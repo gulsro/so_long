@@ -1,19 +1,28 @@
 #include "so_long.h"
 
-static int	protect1(t_graps* elem)
-{	
+static mlx_texture_t	*protect1(mlx_texture_t *elem)
+{
 	if (!elem)
 		return (NULL);
+	return (elem);
 }
 
-void	load_image(mlx_t *mlx)
+void	make_image(mlx_t *mlx, t_graphs *graphs)
 {
-	mlx_texture_t	*t_graphs;
+	/*t_graphs	*graphs;
 
-	t_graphs->bin_text = protect1(mlx_load_png("./images/bin.png"));
-	t_graphs->poop_text = protect1(mlx_load_png("./images/dog_poop.png"));
-	t_graphs->grass_text = protect1(mlx_load_png("./images/grass.png"));
-	t_graphs->bag_text = protect1(mlx_load_png("./images/plastic_bag.png"));
-	t_graphs->wall_text = protect1(mlx_load_png("./images/wall.png"));
-
+	graphs = malloc(sizeof(t_graphs));
+	if (!graphs)
+		ft_exit("Graphs malloc failed", 1);*/
+	graphs->bin_text = protect1(mlx_load_png("./images/bin.png"));
+	graphs->poop_text = protect1(mlx_load_png("./images/dog_poop.png"));
+	graphs->grass_text = protect1(mlx_load_png("./images/grass.png"));
+	graphs->bag_text = protect1(mlx_load_png("./images/plastic_bag.png"));
+	graphs->wall_text = protect1(mlx_load_png("./images/wall.png"));
+	//we have textures, now convert them to images
+	graphs->bin_img = mlx_texture_to_image(mlx, graphs->bin_text);
+	graphs-> poop_img = mlx_texture_to_image(mlx, graphs->poop_text);
+	graphs->grass_img = mlx_texture_to_image(mlx, graphs->grass_text);
+	graphs->bag_img = mlx_texture_to_image(mlx, graphs->bag_text);
+	graphs->wall_img = mlx_texture_to_image(mlx, graphs->wall_text);
 }

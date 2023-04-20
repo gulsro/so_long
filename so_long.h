@@ -43,9 +43,15 @@ typedef struct s_graphs
 
 }t_graphs;
 
+//image.c
+void    make_image(mlx_t *mlx, t_graphs *graphs);
+
 //window.c
-mlx_t *window_init(void);
-void    display_image(mlx_t *mlx);
+void    display_poop(mlx_t *mlx, t_graphs *graphs);
+void    display_bin(mlx_t *mlx, t_graphs *graphs, t_map *my_map);
+void    display_grass(mlx_t *mlx, t_graphs *graphs);
+void    display_bag(mlx_t *mlx, t_graphs *graphs);
+void    display_wall(mlx_t *mlx, t_graphs *graphs);
 
 //init_map.c
 void    init_map_struct(t_map *my_map);
