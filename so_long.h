@@ -12,8 +12,8 @@
 # include <get_next_line.h>
 # include <ft_printf.h>
 
-# define WIDTH 800
-# define HEIGHT 400
+# define WIDTH 832
+# define HEIGHT 320
 # define BPP sizeof(int32_t)
 
 typedef struct s_map

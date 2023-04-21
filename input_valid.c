@@ -84,11 +84,10 @@ void	make_map_arr(t_map *my_map, int fd)
 			break ;
 		map = append_line_to_map(map, line);
 		if (!map)
-			ft_exit("Map_arr cant be made.",1);
+			ft_exit("Error\nMap_arr cant be made.",1);
 	}
 	my_map->map_arr = ft_split(map, '\n');
 	if (!my_map->map_arr)
-		ft_exit("Map_arr failed.", 1);
+		ft_exit("Error\nMap_arr failed.", 1);
 	free(map);
-//	return (my_map->map_arr);
 }
