@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	{
 		mlx = window_init();
 		make_image(mlx, graphs);
-		image_to_window(mlx, graphs, my_map);
+		place_sprites(mlx, graphs, my_map);
 		mlx_loop(mlx);
     mlx_terminate(mlx);
 		int i = 0;

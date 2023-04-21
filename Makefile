@@ -13,7 +13,6 @@ SRCS	= main.c \
 		  map_utils.c \
 		  walkable_map.c \
 		  init_map.c \
-		  window.c \
 		  image.c
 OBJS	= $(SRCS:.c=.o)
 
