@@ -42,21 +42,22 @@ if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
             my_map->x_p_location++;
 */
 
-void	set_keyhook(mlx_key_data_t keydata, void *param)
+//void	set_keyhook(mlx_key_data_t keydata, void *param)
+void    set_keyhook(mlx_key_data_t keydata, t_map *my_map)
 {
 	set_key_up(keydata, my_map);
+	
 }
 
 void	set_key_up(mlx_key_data_t keydata, t_map *my_map)
 {
-	while (my_map->map_arr[y_p_location][x_p_location] != '1')
+	while (my_map->map_arr[my_map->y_p_location][my_map->x_p_location] != '1')
 	{
 		if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
 			my_map->y_p_location--;
-		if (my_map->map_arr[y_p_location][x_p_location] == 'C')
+		if (my_map->map_arr[my_map->y_p_location][my_map->x_p_location] == 'C')
 		{
 			my_map->count_c--;
-			my_
 		}
 	}
 }

@@ -48,6 +48,7 @@ typedef struct s_graphs
 //keys.c
 void    set_keyhook(mlx_key_data_t keydata, t_map *my_map);
 //void    set_keyhook(mlx_key_data_t keydata, void *param);
+void    set_key_up(mlx_key_data_t keydata, t_map *my_map);
 
 //image.c
 void    make_image(mlx_t *mlx, t_graphs *graphs);

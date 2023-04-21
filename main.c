@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		mlx = window_init(my_map);
 		make_image(mlx, graphs);
 		place_sprites(mlx, graphs, my_map);
-		mlx_key_hook(mlx, &set_keyhook, NULL);
+		mlx_key_hook(mlx, set_keyhook, NULL);
 		mlx_loop(mlx);
     mlx_terminate(mlx);
 		int i = 0;
