@@ -13,7 +13,8 @@ SRCS	= main.c \
 		  map_utils.c \
 		  walkable_map.c \
 		  init_map.c \
-		  image.c
+		  image.c \
+		  keys.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)
