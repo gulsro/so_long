@@ -16,6 +16,22 @@
 # define HEIGHT 320
 # define BPP sizeof(int32_t)
 
+typedef struct s_graphs
+{
+        mlx_texture_t   *bin_text;
+        mlx_image_t             *bin_img;
+        mlx_texture_t   *poop_text;
+        mlx_image_t             *poop_img;
+        mlx_texture_t   *grass_text;
+        mlx_image_t             *grass_img;
+        mlx_texture_t   *bag_text;
+        mlx_image_t             *bag_img;
+        mlx_texture_t   *wall_text;
+        mlx_image_t             *wall_img;
+        mlx_t                   *mlx;
+
+}t_graphs;
+
 typedef struct s_map
 {
 	char 	**map_arr;
@@ -26,27 +42,14 @@ typedef struct s_map
 	int		x_p_location;
 	int		y_p_location;
 	mlx_t	*mlx;
-
+	t_graphs	graphs;
 }t_map;
 
-typedef struct s_graphs
-{
-	mlx_texture_t	*bin_text;
-	mlx_image_t		*bin_img;
-	mlx_texture_t	*poop_text;
-	mlx_image_t		*poop_img;
-	mlx_texture_t	*grass_text;
-	mlx_image_t		*grass_img;
-	mlx_texture_t	*bag_text;
-	mlx_image_t		*bag_img;
-	mlx_texture_t	*wall_text;
-	mlx_image_t		*wall_img;
-	mlx_t			*mlx;
-
-}t_graphs;
-
 //keys.c
-void    set_keyhook(mlx_key_data_t keydata, t_map *my_map);
+void    mlx_key_hook_callback(mlx_key_data_t keydata, void* param);
+
+
+
 //void    set_keyhook(mlx_key_data_t keydata, void *param);
 void    set_key_up(mlx_key_data_t keydata, t_map *my_map);
 

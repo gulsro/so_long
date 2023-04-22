@@ -2,22 +2,18 @@
 
 static mlx_t   *window_init(t_map *my_map)
 {
-    mlx_t   *mlx;
-
     mlx_set_setting(MLX_MAXIMIZED, true);
-    mlx = mlx_init(64 * my_map->width_x, 64 * my_map->height_y, "DoggySheet", false);
-    if (!mlx)
+    my_map->mlx = mlx_init(64 * my_map->width_x, 64 * my_map->height_y, "DoggySheet", false);
+    if (!my_map->mlx)
             ft_exit("MLX cant be created", 1);
-    return (mlx);
+    return (my_map->mlx);
 }
 
 int main(int argc, char **argv)
 {
 	t_map	*my_map;
 	t_graphs    *graphs;
-	mlx_t   *mlx;
 
-	mlx = NULL;
 	if (argc != 2)
 		ft_exit("argc", 1);
 	my_map = malloc(sizeof(t_map));
@@ -27,12 +23,12 @@ int main(int argc, char **argv)
 	init_map_struct(my_map);
 	if (check_map(my_map, argv) == 0)
 	{
-		mlx = window_init(my_map);
-		make_image(mlx, graphs);
-		place_sprites(mlx, graphs, my_map);
-		mlx_key_hook(mlx, set_keyhook, NULL);
-		mlx_loop(mlx);
-    mlx_terminate(mlx);
+		my_map->mlx = window_init(my_map);
+		make_image(my_map->mlx, graphs);
+		place_sprites(my_map->mlx, graphs, my_map);
+		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);
+		mlx_loop(my_map->mlx);
+    mlx_terminate(my_map->mlx);
 		int i = 0;
 		while (my_map->cpy_arr[i])
 		{
@@ -40,5 +36,6 @@ int main(int argc, char **argv)
 			i++;
 		}
 	}
+//	system("leaks so_long");
 	return 0;
 }
