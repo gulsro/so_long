@@ -42,7 +42,7 @@ typedef struct s_map
 	int		x_p_location;
 	int		y_p_location;
 	mlx_t	*mlx;
-	t_graphs	graphs;
+	t_graphs	*graphs;
 }t_map;
 
 //keys.c
