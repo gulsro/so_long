@@ -39,6 +39,6 @@ int main(int argc, char **argv)
 	}
 	printf("collected = %d\n", my_map->collected);
 	printf("count_c = %d\n", my_map->count_c);
-	system("leaks so_long");
+//	system("leaks so_long");
 	return 0;
 }

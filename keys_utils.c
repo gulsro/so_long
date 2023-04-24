@@ -23,3 +23,8 @@ int	check_character(t_map *my_map, int x, int y, char character)
 		return (1);
 	return (0);
 }
+/*
+void	check_collectable(t_map *my_map, int x, int y)
+{
+	
+}*/
