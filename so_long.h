@@ -12,8 +12,8 @@
 # include <get_next_line.h>
 # include <ft_printf.h>
 
-# define WIDTH 832
-# define HEIGHT 320
+# define WIDTH 640
+# define HEIGHT 480
 # define BPP sizeof(int32_t)
 
 typedef struct s_graphs
@@ -60,7 +60,7 @@ void    catch_collectable(t_map *my_map, int x, int y);
 
 //image.c
 //void    make_image(mlx_t *mlx, t_graphs *graphs);
-void	images_to_window(t_graphs *graphs, t_map *my_map);
+void	images_to_window(t_map *my_map, t_graphs *graphs);
 
 //init_map.c
 void    init_map_struct(t_map *my_map);
@@ -84,7 +84,7 @@ int	check_all(t_map *my_map);
 
 //walkable_path.c
 int		is_walkable(t_map *my_map, int new_x, int new_y);
-void	find_player(t_map *my_path);
+void	find_player(t_map *my_map);
 char	**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos);
 int     check_valid_chars_after_move(char **cpy_arr);
 

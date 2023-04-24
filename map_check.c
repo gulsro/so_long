@@ -56,9 +56,9 @@ int	check_number_of_ecp(t_map *my_map)
 			if (my_map->map_arr[i][j] == 'E')
 				e++;
 			if (my_map->map_arr[i][j] == 'C')
-                my_map->count_c++;
+				my_map->count_c++;
 			if (my_map->map_arr[i][j] == 'P')
-                p++;
+				p++;
 			j++;
 		}
 		i++;
