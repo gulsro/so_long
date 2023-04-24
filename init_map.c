@@ -9,6 +9,7 @@ void    init_map_struct(t_map *my_map)
 	my_map->height_y = 0;
 	my_map->x_p_location = 0;
 	my_map->y_p_location = 0;
+	my_map->collected = 0;
 }
 
 int	check_map(t_map *my_map, char **argv)

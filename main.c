@@ -23,17 +23,18 @@ int main(int argc, char **argv)
 	if (check_map(my_map, argv) == 0)
 	{
 		my_map->mlx = window_init(my_map);
-		make_image(my_map->mlx, my_map->graphs);
-		place_sprites(my_map->mlx, my_map->graphs, my_map);
+		images_to_window(my_map->graphs, my_map);
 		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);
 		mlx_loop(my_map->mlx);
-    mlx_terminate(my_map->mlx);
+    		mlx_terminate(my_map->mlx);
 		int i = 0;
 		while (my_map->cpy_arr[i])
 		{
 			printf("map elements: %s\n", my_map->cpy_arr[i]);
 			i++;
 		}
+		printf("player location  = (%d, %d)\n", my_map->x_p_location, my_map->y_p_location);
+		printf("instance player location  = (%d, %d)\n", my_map->graphs->bag_img->instances[0].x, my_map->graphs->bag_img->instances[0].y);
 	}
 	system("leaks so_long");
 	return 0;

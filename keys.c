@@ -32,26 +32,73 @@ if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
 void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 {
 //	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
-//		mlx_close_window()
+//		mlx_close_window((mlx_t*)param->mlx);
 	set_key_up(keydata, (t_map*)param);	
+	set_key_down(keydata, (t_map*)param);
+	set_key_right(keydata, (t_map*)param);
+	set_key_left(keydata, (t_map*)param);
 }
 
 void	set_key_up(mlx_key_data_t keydata, t_map *my_map)
 {
-   /* if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS){
-        ft_printf("W\n");
-    }*/
-	if (my_map->map_arr[my_map->y_p_location - 1][my_map->x_p_location] != '1')
+	if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
 	{
-		if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS){
-            ft_printf("W\n");
-	    		my_map->y_p_location--;
-			my_map->graphs->bag_img->instances[0].y -= 64;
-
-        }
-		if (my_map->map_arr[my_map->y_p_location][my_map->x_p_location] == 'C')
+		if (check_character(my_map, my_map->x_p_location, my_map->y_p_location - 1, '1') == 0)
 		{
-			my_map->count_c--;
-		}
+			my_map->y_p_location--;
+			my_map->graphs->bag_img->instances[0].y -= 64;
+			if (check_character(my_map, my_map->x_p_location, my_map->y_p_location, 'C'))
+				catch_collectable(my_map, my_map->x_p_location, my_map->y_p_location);
+        	}
+
 	}
 }
+
+void	set_key_down(mlx_key_data_t keydata, t_map *my_map)
+{
+	if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
+        {
+                if (check_character(my_map, my_map->x_p_location, my_map->y_p_location + 1, '1') == 0)
+                {
+                        my_map->y_p_location++;
+                        my_map->graphs->bag_img->instances[0].y += 64;
+                        if (check_character(my_map, my_map->x_p_location, my_map->y_p_location, 'C'))
+                                catch_collectable(my_map, my_map->x_p_location, my_map->y_p_location);
+                }
+
+        }
+}
+
+void	set_key_right(mlx_key_data_t keydata, t_map *my_map)
+{
+	if (keydata.key == MLX_KEY_D && keydata.action == MLX_PRESS)
+        {
+                if (check_character(my_map, my_map->x_p_location + 1, my_map->y_p_location, '1') == 0)
+                {
+                        my_map->x_p_location++;
+                        my_map->graphs->bag_img->instances[0].x += 64;
+                        if (check_character(my_map, my_map->x_p_location, my_map->y_p_location, 'C'))
+                                catch_collectable(my_map, my_map->x_p_location, my_map->y_p_location);
+                }
+
+        }
+}
+
+void	set_key_left(mlx_key_data_t keydata, t_map *my_map)
+{
+	if (keydata.key == MLX_KEY_A && keydata.action == MLX_PRESS)
+        {
+                if (check_character(my_map, my_map->x_p_location - 1, my_map->y_p_location, '1') == 0)
+                {
+                        my_map->x_p_location--;
+                        my_map->graphs->bag_img->instances[0].x -= 64;
+                        if (check_character(my_map, my_map->x_p_location, my_map->y_p_location, 'C'))
+                                catch_collectable(my_map, my_map->x_p_location, my_map->y_p_location);
+                }
+
+        }
+}
+
+
+
+

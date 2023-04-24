@@ -28,7 +28,7 @@ typedef struct s_graphs
         mlx_image_t             *bag_img;
         mlx_texture_t   *wall_text;
         mlx_image_t             *wall_img;
-        mlx_t                   *mlx;
+//        mlx_t                   *mlx;
 
 }t_graphs;
 
@@ -41,21 +41,26 @@ typedef struct s_map
 	int		count_c;
 	int		x_p_location;
 	int		y_p_location;
+	int		collected;
 	mlx_t	*mlx;
 	t_graphs	*graphs;
 }t_map;
 
 //keys.c
 void    mlx_key_hook_callback(mlx_key_data_t keydata, void* param);
-
-
-
-//void    set_keyhook(mlx_key_data_t keydata, void *param);
 void    set_key_up(mlx_key_data_t keydata, t_map *my_map);
+void	set_key_down(mlx_key_data_t keydata, t_map *my_map);
+void	set_key_left(mlx_key_data_t keydata, t_map *my_map);
+void	set_key_right(mlx_key_data_t keydata, t_map *my_map);
+
+//keys_utils.c
+int     check_character(t_map *my_map, int x, int y, char character);
+void    catch_collectable(t_map *my_map, int x, int y);
+
 
 //image.c
-void    make_image(mlx_t *mlx, t_graphs *graphs);
-void	place_sprites(mlx_t *mlx, t_graphs *graphs, t_map *my_map);
+//void    make_image(mlx_t *mlx, t_graphs *graphs);
+void	images_to_window(t_graphs *graphs, t_map *my_map);
 
 //init_map.c
 void    init_map_struct(t_map *my_map);

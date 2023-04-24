@@ -11,25 +11,23 @@ int	is_walkable(t_map *my_map, int x_pos, int y_pos)
 
 void	find_player(t_map *my_map)
 {
-	int	i;
-	int	j;
+	int	x;
+	int	y;
 
-	i = 0;
-	my_map->x_p_location = 0;
-	my_map->y_p_location = 0;
-	while (my_map->map_arr[i])
+	y = 0;
+	while (my_map->map_arr[y])
 	{
-		j = 0;
-		while (my_map->map_arr[i][j])
+		x = 0;
+		while (my_map->map_arr[y][x])
 		{
-			if (my_map->map_arr[i][j] == 'P')
+			if (my_map->map_arr[y][x] == 'P')
 			{
-				my_map->y_p_location = i;
-   				my_map->x_p_location = j;	
+				my_map->y_p_location = y;
+   				my_map->x_p_location = x;	
 			}
-			j++;
+			x++;
 		}
-		i++;
+		y++;
 	}
 }
 
