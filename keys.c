@@ -1,34 +1,5 @@
 #include "so_long.h"
 
-/**
- * This function sets the key callback, which is called when a key is pressed
- * on the keyboard. Useful for single keypress detection.
- *
- * @param[in] mlx The MLX instance handle.
- * @param[in] func The keypress callback function.
- * @param[in] param An additional optional parameter.
- */
-//void mlx_key_hook(mlx_t* mlx, mlx_keyfunc func, void* param);
-
-//typedef void (*mlx_keyfunc)(mlx_key_data_t keydata, void* param);
-
-/*
-typedef enum action
-{
-    MLX_RELEASE = 0,
-    MLX_PRESS   = 1,
-    MLX_REPEAT  = 2,
-}   action_t;
-*/
-/*
-if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
-            my_map->y_p_location++;
-        if (keydata.key == MLX_KEY_A && keydata.action == MLX_PRESS)
-            my_map->x_p_location--;
-        if (keydata.key == MLX_KEY_D && keydata.action == MLX_PRESS)
-            my_map->x_p_location++;
-*/
-
 void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 {
 //	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
