@@ -57,6 +57,12 @@ void	set_key_right(mlx_key_data_t keydata, t_map *my_map);
 int     check_character(t_map *my_map, int x, int y, char character);
 void    catch_collectable(t_map *my_map, int x, int y);
 
+//moves.c
+void    move_down(t_map *my_map);
+void    move_check(t_map *my_map);
+void    move_up(t_map *my_map);
+void    move_right(t_map *my_map);
+void    move_left(t_map *my_map);
 
 //image.c
 //void    make_image(mlx_t *mlx, t_graphs *graphs);

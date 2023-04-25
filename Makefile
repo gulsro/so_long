@@ -15,7 +15,8 @@ SRCS	= main.c \
 		  init_map.c \
 		  image.c \
 		  keys.c \
-		  keys_utils.c
+		  keys_utils.c \
+		  moves.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)
