@@ -23,7 +23,8 @@ int main(int argc, char **argv)
 	if (check_map(my_map, argv) == 0)
 	{
 		my_map->mlx = window_init(my_map);
-		images_to_window(my_map, my_map->graphs);
+		
+		images_to_window(my_map);
 		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);
 		mlx_loop(my_map->mlx);
     		mlx_terminate(my_map->mlx);

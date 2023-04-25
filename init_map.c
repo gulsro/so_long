@@ -9,6 +9,8 @@ void    init_map_struct(t_map *my_map)
 	my_map->height_y = 0;
 	my_map->x_p_location = 0;
 	my_map->y_p_location = 0;
+	my_map->exit_open = 0;
+	my_map->move = 0;
 	my_map->collected = 0;
 }
 

@@ -38,6 +38,7 @@ void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 	set_key_down(keydata, (t_map*)param);
 	set_key_right(keydata, (t_map*)param);
 	set_key_left(keydata, (t_map*)param);
+	images_to_window((t_map*)param);
 }
 
 void	set_key_up(mlx_key_data_t keydata, t_map *my_map)

@@ -27,7 +27,7 @@ static void	make_image(mlx_t *mlx, t_graphs *graphs)
 	graphs->wall_img = mlx_texture_to_image(mlx, graphs->wall_text);
 }
 
-void	images_to_window(t_map *my_map, t_graphs *graphs)
+void	images_to_window(t_map *my_map)
 {
 	int	x;
 	int	y;
@@ -39,15 +39,15 @@ void	images_to_window(t_map *my_map, t_graphs *graphs)
 		x = 0;
 		while (my_map->map_arr[y][x])
 		{
-			mlx_image_to_window(my_map->mlx, graphs->grass_img, x * 64, y * 64);
+			mlx_image_to_window(my_map->mlx, my_map->graphs->grass_img, x * 64, y * 64);
 			if (my_map->map_arr[y][x] == '1')
-				mlx_image_to_window(my_map->mlx, graphs->wall_img, x * 64, y * 64);
+				mlx_image_to_window(my_map->mlx, my_map->graphs->wall_img, x * 64, y * 64);
 			else if (my_map->map_arr[y][x] == 'P')
-				mlx_image_to_window(my_map->mlx, graphs->bag_img, x * 64, y * 64);
+				mlx_image_to_window(my_map->mlx, my_map->graphs->bag_img, x * 64, y * 64);
 			else if (my_map->map_arr[y][x] == 'E')
-				mlx_image_to_window(my_map->mlx, graphs->bin_img, x * 64, y * 64);
+				mlx_image_to_window(my_map->mlx, my_map->graphs->bin_img, x * 64, y * 64);
 			else if (my_map->map_arr[y][x] == 'C')
-				mlx_image_to_window(my_map->mlx, graphs->poop_img, x * 64, y * 64);
+				mlx_image_to_window(my_map->mlx, my_map->graphs->poop_img, x * 64, y * 64);
 			x++;
 		}
 		y++;
