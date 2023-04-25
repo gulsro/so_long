@@ -28,7 +28,9 @@ typedef struct s_graphs
         mlx_image_t             *bag_img;
         mlx_texture_t   *wall_text;
         mlx_image_t             *wall_img;
-//        mlx_t                   *mlx;
+	int			bag_x;
+	int			bag_y;
+	//        mlx_t                   *mlx;
 
 }t_graphs;
 
@@ -64,7 +66,7 @@ void    move_down(t_map *my_map);
 void    move_up(t_map *my_map);
 void    move_right(t_map *my_map);
 void    move_left(t_map *my_map);
-int    move_check(t_map *my_map, int x, int y);
+void	move_check(t_map *my_map);
 
 
 //image.c

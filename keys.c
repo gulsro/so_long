@@ -5,11 +5,19 @@ void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 //	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
 //		mlx_close_window((mlx_t*)param->mlx);
 //	find_player((t_map*)param);
-	set_key_up(keydata, (t_map*)param);	
-	set_key_down(keydata, (t_map*)param);
-	set_key_right(keydata, (t_map*)param);
-	set_key_left(keydata, (t_map*)param);
-	images_to_window((t_map*)param);
+//	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
+//		mlx_close_window((t_map*)param->(mlx_t*)mlx);
+	t_map	*my_map;
+
+	my_map = param;
+	if (my_map->exit_open == 0)
+	{	
+		set_key_up(keydata, my_map);	
+		set_key_down(keydata, my_map);
+		set_key_right(keydata, my_map);
+		set_key_left(keydata, my_map);
+	}
+//	move_check(my_map);
 }
 
 void	set_key_up(mlx_key_data_t keydata, t_map *my_map)

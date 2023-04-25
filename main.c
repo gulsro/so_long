@@ -24,6 +24,8 @@ int main(int argc, char **argv)
 	{
 		my_map->mlx = window_init(my_map);
 		images_to_window(my_map);
+		my_map->graphs->bag_x = my_map->x_p_location;
+		my_map->graphs->bag_y = my_map->y_p_location;
 		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);
 		mlx_loop(my_map->mlx);
     		mlx_terminate(my_map->mlx);
@@ -34,7 +36,7 @@ int main(int argc, char **argv)
 			i++;
 		}
 		printf("collectable = %d\n", my_map->count_c);
-		printf("player location  = (%d, %d)\n", my_map->x_p_location, my_map->y_p_location);
+		printf("player location  = (%d, %d)\n", my_map->graphs->bag_x, my_map->graphs->bag_y);
 //		printf("instance player location  = (%d, %d)\n", my_map->graphs->bag_img->instances[0].x, my_map->graphs->bag_img->instances[0].y);
 	}
 	printf("collected = %d\n", my_map->collected);
