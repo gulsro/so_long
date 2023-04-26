@@ -11,11 +11,11 @@ void    catch_collectable(t_map *my_map)
 	i = 0;
 	while (i < my_map->count_c)
 	{
-		if (my_map->graphs->poop_img->instances[i].x == my_map->graphs->bag_x * 64
-				&& my_map->graphs->poop_img->instances[i].y == my_map->graphs->bag_y * 64)
+		if (my_map->graphs->poop_img->instances[i].x == my_map->x_p_location * 64
+				&& my_map->graphs->poop_img->instances[i].y == my_map->y_p_location * 64)
 		{
 			my_map->graphs->poop_img->instances[i].enabled = 0;
-			my_map->map_arr[my_map->graphs->bag_y][my_map->graphs->bag_x] = '0';
+			my_map->map_arr[my_map->y_p_location][my_map->x_p_location] = '0';
 			my_map->collected++;
 		}
 		i++;
