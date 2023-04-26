@@ -48,12 +48,8 @@ typedef struct s_map
 
 //keys.c
 void    mlx_key_hook_callback(mlx_key_data_t keydata, void* param);
-void    set_key_up(mlx_key_data_t keydata, t_map *my_map);
-void	set_key_down(mlx_key_data_t keydata, t_map *my_map);
-void	set_key_left(mlx_key_data_t keydata, t_map *my_map);
-void	set_key_right(mlx_key_data_t keydata, t_map *my_map);
 
-//keys_utils.c
+//moves_utils.c
 int     check_character(t_map *my_map, int x, int y, char character);
 void    catch_collectable(t_map *my_map);
 
@@ -64,9 +60,7 @@ void    move_right(t_map *my_map);
 void    move_left(t_map *my_map);
 void	move_check(t_map *my_map);
 
-
 //image.c
-//void    make_image(mlx_t *mlx, t_graphs *graphs);
 void	images_to_window(t_map *my_map);
 
 //init_map.c
@@ -80,7 +74,6 @@ int		open_file(char *argv);
 
 //map_utils.c
 void	map_scale(t_map *my_map);
-//char	**create_map_arr_cpy(t_map *my_map);
 char	**create_map_arr_cpy(t_map *my_map);
 
 //map_valid.c
@@ -98,4 +91,6 @@ int     check_valid_chars_after_move(char **cpy_arr);
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);
 
+//free.c
+void    free_map_arr(char **map_arr);
 #endif

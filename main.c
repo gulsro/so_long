@@ -23,11 +23,12 @@ int main(int argc, char **argv)
 	{
 		my_map->mlx = window_init(my_map);
 		images_to_window(my_map);
-		printf("height: %d\n", my_map->height_y);
+		ft_printf("height: %d\n", my_map->height_y);
 		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);
 		mlx_loop(my_map->mlx);
     		mlx_terminate(my_map->mlx);
-		int i = 0;
+		free_map_arr(my_map->map_arr);
+		/*	int i = 0;
 		while (my_map->map_arr[i])
 		{
 			printf("map elements: %s\n", my_map->map_arr[i]);
@@ -38,6 +39,8 @@ int main(int argc, char **argv)
 	}
 	printf("collected = %d\n", my_map->collected);
 	printf("count_c = %d\n", my_map->count_c);
-//	system("leaks so_long");
+	*/
+	}
+	system("leaks so_long");
 	return 0;
 }

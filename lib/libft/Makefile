@@ -50,7 +50,6 @@ SRC = ft_atoi.c \
 			get_next_line_utils.c \
 			./libftprintf/ft_putchar.c \
 			./libftprintf/ft_putnbr.c \
-			./libftprintf/ft_strlen.c \
 			./libftprintf/ft_putstr.c \
 			./libftprintf/ft_puthexlow.c \
 			./libftprintf/ft_puthexupp.c \
