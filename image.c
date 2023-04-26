@@ -19,12 +19,16 @@ static void	make_image(mlx_t *mlx, t_graphs *graphs)
 	graphs->grass_text = protect1(mlx_load_png("./images/grass.png"));
 	graphs->bag_text = protect1(mlx_load_png("./images/plastic_bag.png"));
 	graphs->wall_text = protect1(mlx_load_png("./images/wall.png"));
+	graphs->doggy_text = protect1(mlx_load_png("./images/doggy.png"));
+	graphs->gameover_text = protect1(mlx_load_png("./images/gameover.png"));
 	//we have textures, now convert them to images
 	graphs->bin_img = mlx_texture_to_image(mlx, graphs->bin_text);
 	graphs-> poop_img = mlx_texture_to_image(mlx, graphs->poop_text);
 	graphs->grass_img = mlx_texture_to_image(mlx, graphs->grass_text);
 	graphs->bag_img = mlx_texture_to_image(mlx, graphs->bag_text);
 	graphs->wall_img = mlx_texture_to_image(mlx, graphs->wall_text);
+	graphs->doggy_img = mlx_texture_to_image(mlx, graphs->doggy_text);
+	graphs->gameover_img = mlx_texture_to_image(mlx, graphs->gameover_text);
 }
 
 static void	background_to_window(t_map *my_map)

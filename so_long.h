@@ -24,10 +24,10 @@ typedef struct s_graphs
         mlx_image_t             *bag_img;
         mlx_texture_t   *wall_text;
         mlx_image_t             *wall_img;
-	int			bag_x;
-	int			bag_y;
-	//        mlx_t                   *mlx;
-
+	mlx_texture_t	*doggy_text;
+	mlx_image_t		*doggy_img;
+	mlx_texture_t	*gameover_text;
+	mlx_image_t		*gameover_img;
 }t_graphs;
 
 typedef struct s_map
@@ -52,6 +52,7 @@ void    mlx_key_hook_callback(mlx_key_data_t keydata, void* param);
 //moves_utils.c
 int     check_character(t_map *my_map, int x, int y, char character);
 void    catch_collectable(t_map *my_map);
+void    game_over(t_map *my_map);
 
 //moves.c
 void    move_down(t_map *my_map);

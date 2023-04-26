@@ -26,14 +26,18 @@ int	check_map(t_map *my_map, char **argv)
 	make_map_arr(my_map, fd);
 	map_scale(my_map);
 	if (check_all(my_map) != 1)
+	{
+		free_map_arr(my_map->map_arr);
 		return (1);
+	}
 	find_player(my_map);
 	cpy = create_map_arr_cpy(my_map);
 	altered_cpy = move(my_map, cpy, my_map->x_p_location, my_map->y_p_location);
 	if (check_valid_chars_after_move(altered_cpy) != 1)
 	{
-		free(altered_cpy);
+		free_map_arr(cpy);
 		ft_exit("Error\nPath is invalid", 1);
 	}
+	free_map_arr(cpy);
 	return (0);
 }
