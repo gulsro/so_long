@@ -42,13 +42,13 @@ void	images_to_window(t_map *my_map)
 			mlx_image_to_window(my_map->mlx, my_map->graphs->grass_img, x * 64, y * 64);
 			if (my_map->map_arr[y][x] == '1')
 				mlx_image_to_window(my_map->mlx, my_map->graphs->wall_img, x * 64, y * 64);
-			else if (my_map->map_arr[y][x] == 'P')
-				mlx_image_to_window(my_map->mlx, my_map->graphs->bag_img, x * 64, y * 64);
-			else if (my_map->map_arr[y][x] == 'E')
+			if (my_map->map_arr[y][x] == 'E')
 				mlx_image_to_window(my_map->mlx, my_map->graphs->bin_img, x * 64, y * 64);
-			else if (my_map->map_arr[y][x] == 'C')
+			 if (my_map->map_arr[y][x] == 'C')
 				mlx_image_to_window(my_map->mlx, my_map->graphs->poop_img, x * 64, y * 64);
-			x++;
+			if (my_map->map_arr[y][x] == 'P')
+                                mlx_image_to_window(my_map->mlx, my_map->graphs->bag_img, x * 64, y * 64);
+			 x++;
 		}
 		y++;
 	}

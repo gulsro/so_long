@@ -10,6 +10,8 @@ void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 	t_map	*my_map;
 
 	my_map = param;
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
+                mlx_close_window(my_map->mlx);
 	if (my_map->exit_open == 0)
 	{	
 		set_key_up(keydata, my_map);	

@@ -2,8 +2,7 @@
 
 static mlx_t   *window_init(t_map *my_map)
 {
-  //  mlx_set_setting(MLX_MAXIMIZED, true);
-    my_map->mlx = mlx_init(64 * my_map->width_x, 64 * my_map->height_y, "DoggySheet", false);
+	my_map->mlx = mlx_init(64 * my_map->width_x, 64 * my_map->height_y, "DoggySheet", false);
     if (!my_map->mlx)
             ft_exit("MLX cant be created", 1);
     return (my_map->mlx);
@@ -24,6 +23,7 @@ int main(int argc, char **argv)
 	{
 		my_map->mlx = window_init(my_map);
 		images_to_window(my_map);
+		printf("height: %d\n", my_map->height_y);
 		my_map->graphs->bag_x = my_map->x_p_location;
 		my_map->graphs->bag_y = my_map->y_p_location;
 		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);

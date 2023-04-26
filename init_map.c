@@ -12,6 +12,8 @@ void    init_map_struct(t_map *my_map)
 	my_map->exit_open = 0;
 	my_map->move = 0;
 	my_map->collected = 0;
+	my_map->graphs->bag_x = 0;
+	my_map->graphs->bag_y = 0;
 }
 
 int	check_map(t_map *my_map, char **argv)

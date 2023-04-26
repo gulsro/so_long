@@ -15,6 +15,7 @@ void    catch_collectable(t_map *my_map)
 				&& my_map->graphs->poop_img->instances[i].y == my_map->graphs->bag_y * 64)
 		{
 			my_map->graphs->poop_img->instances[i].enabled = 0;
+			my_map->map_arr[my_map->graphs->bag_y][my_map->graphs->bag_x] = '0';
 			my_map->collected++;
 		}
 		i++;

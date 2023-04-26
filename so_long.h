@@ -12,10 +12,6 @@
 # include <get_next_line.h>
 # include <ft_printf.h>
 
-# define WIDTH 640
-# define HEIGHT 480
-# define BPP sizeof(int32_t)
-
 typedef struct s_graphs
 {
         mlx_texture_t   *bin_text;
