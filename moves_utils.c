@@ -32,7 +32,7 @@ int	check_character(t_map *my_map, int x, int y, char character)
 void	game_over(t_map *my_map)
 {
 	my_map->graphs->bag_img->instances[0].enabled = 0;
-//	mlx_image_to_window(my_map->mlx, my_map->graphs->gameover_img, (my_map->width_x / 2) * 64, (my_map->height_y / 2) * 64);
-	mlx_image_to_window(my_map->mlx, my_map->graphs->doggy_img, (my_map->width_x / 2) * 64, (my_map->height_y / 2) * 64);
+	mlx_image_to_window(my_map->mlx, my_map->graphs->gameover_img, (my_map->width_x / 2) * 64, 64);//(my_map->width_x / 2) * 64, (my_map->height_y / 2) * 64);
+//	mlx_image_to_window(my_map->mlx, my_map->graphs->doggy_img, (my_map->width_x / 2) * 64, (my_map->height_y / 2) * 64);
 	ft_printf("Game over!\n");
 }

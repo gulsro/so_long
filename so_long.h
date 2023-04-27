@@ -94,4 +94,6 @@ void	ft_exit(char *error_msg, int exit_code);
 
 //free.c
 void    free_map_arr(char **map_arr);
+void    free_textures(t_map *my_map);
+
 #endif

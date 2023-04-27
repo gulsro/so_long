@@ -28,7 +28,8 @@ int main(int argc, char **argv)
 		mlx_loop(my_map->mlx);
     		mlx_terminate(my_map->mlx);
 		free_map_arr(my_map->map_arr);
-//		free(my_map);
+		free_textures(my_map);
+		//		free(my_map);
 	//	free(my_map->graphs);
 		/*	int i = 0;
 		while (my_map->map_arr[i])
