@@ -7,28 +7,34 @@ static mlx_texture_t	*protect1(mlx_texture_t *elem)
 	return (elem);
 }
 
-static void	make_image(mlx_t *mlx, t_graphs *graphs)
+static void	make_texture(t_map *my_map)
 {
-	/*t_graphs	*graphs;
+	my_map->graphs->bin_text = protect1(mlx_load_png("./images/bin.png"));
+	my_map->graphs->poop_text = protect1(mlx_load_png("./images/dog_poop.png"));
+	my_map->graphs->grass_text = protect1(mlx_load_png("./images/grass.png"));
+	my_map->graphs->bag_text = protect1(mlx_load_png("./images/plastic_bag.png"));
+	my_map->graphs->wall_text = protect1(mlx_load_png("./images/wall.png"));
+	my_map->graphs->doggy_text = protect1(mlx_load_png("./images/doggy.png"));
+	my_map->graphs->gameover_text = protect1(mlx_load_png("./images/gameover.png"));
+}
 
-	graphs = malloc(sizeof(t_graphs));
-	if (!graphs)
-		ft_exit("Graphs malloc failed", 1);*/
-	graphs->bin_text = protect1(mlx_load_png("./images/bin.png"));
-	graphs->poop_text = protect1(mlx_load_png("./images/dog_poop.png"));
-	graphs->grass_text = protect1(mlx_load_png("./images/grass.png"));
-	graphs->bag_text = protect1(mlx_load_png("./images/plastic_bag.png"));
-	graphs->wall_text = protect1(mlx_load_png("./images/wall.png"));
-	graphs->doggy_text = protect1(mlx_load_png("./images/doggy.png"));
-	graphs->gameover_text = protect1(mlx_load_png("./images/gameover.png"));
-	//we have textures, now convert them to images
-	graphs->bin_img = mlx_texture_to_image(mlx, graphs->bin_text);
-	graphs-> poop_img = mlx_texture_to_image(mlx, graphs->poop_text);
-	graphs->grass_img = mlx_texture_to_image(mlx, graphs->grass_text);
-	graphs->bag_img = mlx_texture_to_image(mlx, graphs->bag_text);
-	graphs->wall_img = mlx_texture_to_image(mlx, graphs->wall_text);
-	graphs->doggy_img = mlx_texture_to_image(mlx, graphs->doggy_text);
-	graphs->gameover_img = mlx_texture_to_image(mlx, graphs->gameover_text);
+static void	make_image(t_map *my_map)
+{
+	make_texture(my_map);
+	my_map->graphs->bin_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->bin_text);
+	my_map->graphs-> poop_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->poop_text);
+	my_map->graphs->grass_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->grass_text);
+	my_map->graphs->bag_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->bag_text);
+	my_map->graphs->wall_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->wall_text);
+	my_map->graphs->doggy_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->doggy_text);
+	my_map->graphs->gameover_img = mlx_texture_to_image(my_map->mlx, my_map->graphs->gameover_text);
+	mlx_delete_texture(my_map->graphs->wall_text);
+        mlx_delete_texture(my_map->graphs->grass_text);
+        mlx_delete_texture(my_map->graphs->bin_text);
+        mlx_delete_texture(my_map->graphs->bag_text);
+        mlx_delete_texture(my_map->graphs->poop_text);
+        mlx_delete_texture(my_map->graphs->gameover_text);
+        mlx_delete_texture(my_map->graphs->doggy_text);
 }
 
 static void	background_to_window(t_map *my_map)
@@ -36,7 +42,7 @@ static void	background_to_window(t_map *my_map)
 	int     x;
         int     y;
 
-        make_image(my_map->mlx, my_map->graphs);
+        make_image(my_map);
         y = 0;
         while (my_map->map_arr[y])
         {
@@ -55,7 +61,7 @@ void	images_to_window(t_map *my_map)
 	int	x;
 	int	y;
 
-	make_image(my_map->mlx, my_map->graphs);
+	make_image(my_map);
 	background_to_window(my_map);
 	y = 0;
 	while (my_map->map_arr[y])
