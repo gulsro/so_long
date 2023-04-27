@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-void    map_scale(t_map *my_map)
+void	map_scale(t_map *my_map)
 {
 	int i;
 	int j;
@@ -21,7 +21,7 @@ void    map_scale(t_map *my_map)
 
 char	**create_map_arr_cpy(t_map *my_map)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	my_map->cpy_arr = ft_calloc(my_map->height_y + 1, sizeof(char *));

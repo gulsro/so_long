@@ -6,7 +6,7 @@ int	ft_strlen_protect(char *str)
 
 	i = 0;
 	if (str == NULL)
-		return 0;
+		return (0);
 	while (str[i] != '\0')
 	{
 		i++;
@@ -16,7 +16,7 @@ int	ft_strlen_protect(char *str)
 
 int	open_file(char *argv)
 {
-	int     fd;
+	int	fd;
 
 	if (ft_strncmp(argv + ft_strlen(argv) - 4, ".ber", 4) != 0)
 	{
@@ -46,7 +46,8 @@ static char	*append_line_to_map(char *map, char *line)
 		if (map == NULL)
 			ft_exit("Map calloc failed.", 1);
 	}
-	appended = ft_calloc(sizeof(char), ft_strlen_protect(map) + ft_strlen_protect(line) + 1);
+	appended = ft_calloc(sizeof(char), ft_strlen_protect(map)
+			+ ft_strlen_protect(line) + 1);
 	if (appended == NULL)
 	{
 		free(map);
@@ -63,10 +64,7 @@ static char	*append_line_to_map(char *map, char *line)
 		appended[map_i++] = line[line_i++];
 	appended[map_i] = '\0';
 	if (line)
-	{
 		free(line);
-		line = NULL;
-	}
 	return (free(map), appended);
 }
 

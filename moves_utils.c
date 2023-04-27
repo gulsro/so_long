@@ -1,22 +1,20 @@
 #include "so_long.h"
 
-void    catch_collectable(t_map *my_map)
-{/*
-	if (my_map->collected < my_map->count_c)
-	{
-		my_map->collected++;
-	}*/
+void	catch_collectable(t_map *my_map)
+{
 	int	i;
 
 	i = 0;
 	while (i < my_map->count_c)
 	{
-		if (my_map->graphs->poop_img->instances[i].x == my_map->x_p_location * 64
-				&& my_map->graphs->poop_img->instances[i].y == my_map->y_p_location * 64)
+		if (my_map->graphs->poop_img->instances[i].x
+			== my_map->x_p_location * 64
+			&& my_map->graphs->poop_img->instances[i].y
+			== my_map->y_p_location * 64)
 		{
-			my_map->graphs->poop_img->instances[i].enabled = 0;
-			my_map->map_arr[my_map->y_p_location][my_map->x_p_location] = '0';
-			my_map->collected++;
+		my_map->graphs->poop_img->instances[i].enabled = 0;
+		my_map->map_arr[my_map->y_p_location][my_map->x_p_location] = '0';
+		my_map->collected++;
 		}
 		i++;
 	}
@@ -32,7 +30,7 @@ int	check_character(t_map *my_map, int x, int y, char character)
 void	game_over(t_map *my_map)
 {
 	my_map->graphs->bag_img->instances[0].enabled = 0;
-	mlx_image_to_window(my_map->mlx, my_map->graphs->gameover_img, (my_map->width_x / 2) * 64, 64);//(my_map->width_x / 2) * 64, (my_map->height_y / 2) * 64);
-//	mlx_image_to_window(my_map->mlx, my_map->graphs->doggy_img, (my_map->width_x / 2) * 64, (my_map->height_y / 2) * 64);
+	mlx_image_to_window(my_map->mlx, my_map->graphs->gameover_img,
+		(my_map->width_x / 2) * 64, 64);
 	ft_printf("Game over!\n");
 }

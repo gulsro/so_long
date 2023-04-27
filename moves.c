@@ -12,39 +12,39 @@ void	move_down(t_map *my_map)
 	}
 }
 
-void    move_up(t_map *my_map)
+void	move_up(t_map *my_map)
 {
 	if (check_character(my_map, my_map->x_p_location, my_map->y_p_location - 1, '1') == 0)
-        {
+	{
 		my_map->move++;
-	  	my_map->y_p_location--;
+		my_map->y_p_location--;
 		my_map->graphs->bag_img->instances[0].y -= 64;
 		ft_printf("%d\n", my_map->move);
-        	move_check(my_map);
+		move_check(my_map);
 	}
 }
 
-void    move_left(t_map *my_map)
+void	move_left(t_map *my_map)
 {
 	if (check_character(my_map, my_map->x_p_location - 1, my_map->y_p_location, '1') == 0)
-        {
+	{
 		my_map->move++;
-	      	my_map->x_p_location--;
+		my_map->x_p_location--;
 		my_map->graphs->bag_img->instances[0].x -= 64;
 		ft_printf("%d\n", my_map->move);
-        	move_check(my_map);
+		move_check(my_map);
 	}
 }
 
-void    move_right(t_map *my_map)
+void	move_right(t_map *my_map)
 {
 	if (check_character(my_map, my_map->x_p_location + 1, my_map->y_p_location, '1') == 0)
-        {
+	{
 		my_map->move++;
 		my_map->x_p_location++;
 		my_map->graphs->bag_img->instances[0].x += 64;
 		ft_printf("%d\n", my_map->move);
-        	move_check(my_map);
+		move_check(my_map);
 	}
 }
 

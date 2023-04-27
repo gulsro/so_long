@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-void    init_map_struct(t_map *my_map)
+void	init_map_struct(t_map *my_map)
 {
 	my_map->map_arr = NULL;
 	my_map->cpy_arr = NULL;
@@ -16,7 +16,7 @@ void    init_map_struct(t_map *my_map)
 
 int	check_map(t_map *my_map, char **argv)
 {
-	int	fd;
+	int		fd;
 	char	**cpy;
 	char	**altered_cpy;
 

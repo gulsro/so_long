@@ -6,26 +6,26 @@ void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 
 	my_map = param;
 	if (keydata.action == MLX_PRESS)
-        {
+	{
 		if (keydata.key == MLX_KEY_ESCAPE)
 		{
 			mlx_close_window(my_map->mlx);
 		}
-		else if (keydata.key == MLX_KEY_W) 
+		else if (keydata.key == MLX_KEY_W)
 		{
-                        move_up(my_map);
-                } 
-		else if (keydata.key == MLX_KEY_S) 
+			move_up(my_map);
+		}
+		else if (keydata.key == MLX_KEY_S)
 		{
-                        move_down(my_map);
-                } 
-		else if (keydata.key == MLX_KEY_D) 
+			move_down(my_map);
+		}
+		else if (keydata.key == MLX_KEY_D)
 		{
-                        move_right(my_map);
-                } 
+			move_right(my_map);
+		}
 		else if (keydata.key == MLX_KEY_A)
 		{
-                        move_left(my_map);
-                }
-        }
+			move_left(my_map);
+		}
+	}
 }
