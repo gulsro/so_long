@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/18 14:01:56 by gozturk       #+#    #+#                 */
-/*   Updated: 2022/11/04 17:17:28 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 11:33:33 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	ptr = malloc(sizeof(char) * (ft_strlen(s1) +ft_strlen(s2) + 1));
 	if (!ptr)
-		return NULL;
+		return (NULL);
 	while (ft_strlen(s1) > i && s1[i] != '\0')
 	{
 		ptr[i] = s1[i];

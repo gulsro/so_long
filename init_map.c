@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   init_map.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/28 11:41:07 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/28 12:03:36 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	init_map_struct(t_map *my_map)
@@ -5,6 +17,8 @@ void	init_map_struct(t_map *my_map)
 	my_map->map_arr = NULL;
 	my_map->cpy_arr = NULL;
 	my_map->count_c = 0;
+	my_map->count_p = 0;
+	my_map->count_e = 0;
 	my_map->width_x = 0;
 	my_map->height_y = 0;
 	my_map->x_p_location = 0;

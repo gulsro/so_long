@@ -1,4 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   protect.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/28 11:54:54 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/28 12:11:54 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
+
+char	*protect_mem(char *map)
+{
+	if (!map)
+		ft_exit("Memory allocation", 1);
+	return (map);
+}
 
 mlx_texture_t	*protect_text(mlx_texture_t *elem)
 {

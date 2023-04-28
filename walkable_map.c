@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   walkable_map.c                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/28 11:36:42 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/28 11:39:01 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include  "so_long.h"
 
 int	is_walkable(t_map *my_map, int x_pos, int y_pos)
 {
-//	create_map_arr_cpy(my_map);
-	if (my_map->cpy_arr[y_pos][x_pos] == 'E' || my_map->cpy_arr[y_pos][x_pos] == 'C' || my_map->cpy_arr[y_pos][x_pos] == '0' || my_map->cpy_arr[y_pos][x_pos] == 'P')
+	if (my_map->cpy_arr[y_pos][x_pos] == 'E'
+			|| my_map->cpy_arr[y_pos][x_pos] == 'C'
+			|| my_map->cpy_arr[y_pos][x_pos] == '0'
+			|| my_map->cpy_arr[y_pos][x_pos] == 'P')
 		return (1);
 	else
 		return (0);
@@ -23,7 +37,7 @@ void	find_player(t_map *my_map)
 			if (my_map->map_arr[y][x] == 'P')
 			{
 				my_map->y_p_location = y;
-   				my_map->x_p_location = x;	
+				my_map->x_p_location = x;
 			}
 			x++;
 		}
@@ -36,7 +50,7 @@ char	**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos)
 	if (cpy_arr[y_pos][x_pos] != '1')
 	{
 		if (is_walkable(my_map, x_pos, y_pos) == 1)
-			 cpy_arr[y_pos][x_pos] = 'X';
+			cpy_arr[y_pos][x_pos] = 'X';
 		else
 			return (cpy_arr);
 		move(my_map, cpy_arr, x_pos + 1, y_pos);
@@ -58,7 +72,7 @@ int	check_valid_chars_after_move(char **cpy_arr)
 		j = 0;
 		while (cpy_arr[i][j])
 		{
-			if (cpy_arr[i][j] != '1' && cpy_arr[i][j] != 'X' 
+			if (cpy_arr[i][j] != '1' && cpy_arr[i][j] != 'X'
 					&& cpy_arr[i][j] != '0')
 				return (0);
 			j++;
@@ -67,6 +81,3 @@ int	check_valid_chars_after_move(char **cpy_arr)
 	}
 	return (1);
 }
-
-
-

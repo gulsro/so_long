@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   map_array.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: gozturk <marvin@codam.nl>                    +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/04/28 11:44:16 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/28 12:10:50 by gozturk       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	ft_strlen_protect(char *str)
@@ -34,6 +46,13 @@ int	open_file(char *argv)
 	return (fd);
 }
 
+static void	exit_free(char *error_msg, int exit_code, char *map)
+{
+	free(map);
+	perror(error_msg);
+	exit(exit_code);
+}
+
 static char	*append_line_to_map(char *map, char *line)
 {
 	int		line_i;
@@ -41,18 +60,12 @@ static char	*append_line_to_map(char *map, char *line)
 	char	*appended;
 
 	if (map == NULL)
-	{
-		map = ft_calloc((ft_strlen_protect(line) + 1), sizeof(char));
-		if (map == NULL)
-			ft_exit("Map calloc failed.", 1);
-	}
-	appended = ft_calloc(sizeof(char), ft_strlen_protect(map)
-			+ ft_strlen_protect(line) + 1);
-	if (appended == NULL)
-	{
-		free(map);
-		ft_exit("Appended calloc failed.", 1);
-	}
+		map = protect_mem(ft_calloc((ft_strlen_protect(line) + 1),
+					sizeof(char)));
+	appended = protect_mem(ft_calloc(sizeof(char), ft_strlen_protect(map)
+				+ ft_strlen_protect(line) + 1));
+	if (!appended)
+		exit_free("Memory allocation", 1, map);
 	map_i = 0;
 	while (map[map_i] != '\0')
 	{
@@ -82,7 +95,7 @@ void	make_map_arr(t_map *my_map, int fd)
 			break ;
 		map = append_line_to_map(map, line);
 		if (!map)
-			ft_exit("Error\nMap_arr cant be made.",1);
+			ft_exit("Error\nMap_arr cant be made.", 1);
 	}
 	my_map->map_arr = ft_split(map, '\n');
 	if (!my_map->map_arr)
