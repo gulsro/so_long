@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:59:54 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:45:31 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 16:09:51 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ int	check_number_of_ecp(t_map *my_map, int i, int j)
 int	check_all(t_map *my_map)
 {
 	if (check_walls(my_map) != 1)
-		ft_exit("Error\nThe map is not surrounded by the walls", 1);
+		ft_exit("Error\nThe map is not surrounded by the walls");
 	if (check_rectangular_map(my_map) != 1)
-		ft_exit("Error\nThe map is not rectangular", 1);
+		ft_exit("Error\nThe map is not rectangular");
 	if (check_number_of_ecp(my_map, 0, 0) != 1)
-		ft_exit("Error\nAmount of the characters is not correct.", 1);
+		ft_exit("Error\nAmount of the characters is not correct.");
 	return (1);
 }

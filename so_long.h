@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 12:25:17 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:38:11 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 16:09:24 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_map
 	int			x_p_location;
 	int			y_p_location;
 	int			collected;
-	int			exit_open;
 	int			move;
 	mlx_t		*mlx;
 	t_graphs	*graphs;
@@ -91,6 +90,7 @@ int				open_file(char *argv);
 //map_utils.c
 void			map_scale(t_map *my_map);
 char			**create_map_arr_cpy(t_map *my_map);
+int				check_new_line(char *str);
 
 //map_valid.c
 int				check_walls(t_map *my_map);
@@ -105,8 +105,8 @@ char			**move(t_map *my_map, char **cpy_arr, int x_pos, int y_pos);
 int				check_valid_chars_after_move(char **cpy_arr);
 
 //error_exit.c
-void			ft_exit(char *error_msg, int exit_code);
 void			ft_error(char *error_msg);
+void			ft_exit(char *error_msg);
 
 //free.c
 void			free_map_arr(char **map_arr);

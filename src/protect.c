@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:54:54 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:46:22 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 14:38:20 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*protect_mem(char *map)
 {
 	if (!map)
-		ft_exit("Memory allocation", 1);
+		ft_exit("Memory allocation");
 	return (map);
 }
 

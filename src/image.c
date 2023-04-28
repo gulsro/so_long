@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:40:52 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:44:29 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 14:56:45 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void	delete_textures(t_map *my_map)
 	mlx_delete_texture(my_map->graphs->bag_text);
 	mlx_delete_texture(my_map->graphs->poop_text);
 	mlx_delete_texture(my_map->graphs->gameover_text);
-	mlx_delete_texture(my_map->graphs->doggy_text);
 }
 
 static void	make_texture(t_map *my_map)
@@ -35,8 +34,6 @@ static void	make_texture(t_map *my_map)
 		= protect_text(mlx_load_png("./images/plastic_bag.png"));
 	my_map->graphs->wall_text
 		= protect_text(mlx_load_png("./images/wall.png"));
-	my_map->graphs->doggy_text
-		= protect_text(mlx_load_png("./images/doggy.png"));
 	my_map->graphs->gameover_text
 		= protect_text(mlx_load_png("./images/gameover.png"));
 }
@@ -59,9 +56,6 @@ static void	make_image(t_map *my_map)
 	my_map->graphs->wall_img
 		= protect_img(mlx_texture_to_image(my_map->mlx,
 				my_map->graphs->wall_text));
-	my_map->graphs->doggy_img
-		= protect_img(mlx_texture_to_image(my_map->mlx,
-				my_map->graphs->doggy_text));
 	my_map->graphs->gameover_img
 		= protect_img(mlx_texture_to_image(my_map->mlx,
 				my_map->graphs->gameover_text));

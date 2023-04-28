@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:44:16 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:45:20 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 16:09:22 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,18 @@ int	open_file(char *argv)
 
 	if (ft_strncmp(argv + ft_strlen(argv) - 4, ".ber", 4) != 0)
 	{
-		ft_exit("Bad map file extension", 1);
+		ft_exit("Bad map file extension");
 	}
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_exit("Map file can not be opened", 1);
+		ft_exit("Map file can not be opened");
 	}
 	else if (fd == 0)
 	{
-		ft_exit("Map file is empty", 1);
+		ft_exit("Map file is empty");
 	}
 	return (fd);
-}
-
-static void	exit_free(char *error_msg, int exit_code, char *map)
-{
-	free(map);
-	perror(error_msg);
-	exit(exit_code);
 }
 
 static char	*append_line_to_map(char *map, char *line)
@@ -64,8 +57,6 @@ static char	*append_line_to_map(char *map, char *line)
 					sizeof(char)));
 	appended = protect_mem(ft_calloc(sizeof(char), ft_strlen_protect(map)
 				+ ft_strlen_protect(line) + 1));
-	if (!appended)
-		exit_free("Memory allocation", 1, map);
 	map_i = 0;
 	while (map[map_i] != '\0')
 	{
@@ -95,10 +86,12 @@ void	make_map_arr(t_map *my_map, int fd)
 			break ;
 		map = append_line_to_map(map, line);
 		if (!map)
-			ft_exit("Error\nMap_arr cant be made.", 1);
+			ft_exit("Error\nMap_arr cant be made.");
 	}
+	if (check_new_line(map) == 1)
+		ft_exit("Error\nInvalid map");
 	my_map->map_arr = ft_split(map, '\n');
 	if (!my_map->map_arr)
-		ft_exit("Error\nMap_arr failed.", 1);
+		ft_exit("Error\nMap_arr failed.");
 	free(map);
 }

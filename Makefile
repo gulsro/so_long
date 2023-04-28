@@ -1,5 +1,5 @@
 NAME	= so_long
-CFLAGS	= -Wextra -Wall -Werror -g -fsanitize=address
+CFLAGS	= -Wextra -Wall -Werror
 LIBMLX	= ./lib/MLX42
 LIBFT	= ./lib/libft/libft.a
 
@@ -31,7 +31,7 @@ libmlx:
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./lib/libft
-	@$(CC) $(OBJS) $(LIBFT) $(LIBS) $(HEADERS) -o $(NAME)
+	@$(CC) $(OBJS) $(CFLAGS) $(LIBFT) $(LIBS) $(HEADERS) -o $(NAME)
 
 clean:
 	@rm -rf $(OBJS)
