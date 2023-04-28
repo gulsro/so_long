@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:41:07 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 15:08:30 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 18:25:53 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	init_map_struct(t_map *my_map)
 	my_map->y_p_location = 0;
 	my_map->move = 0;
 	my_map->collected = 0;
+	my_map->exit_open = 0;
 }
 
 int	check_map(t_map *my_map, char **argv)

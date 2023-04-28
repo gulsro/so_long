@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 12:25:17 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 16:09:24 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 18:28:51 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_map
 	int			x_p_location;
 	int			y_p_location;
 	int			collected;
+	int			exit_open;
 	int			move;
 	mlx_t		*mlx;
 	t_graphs	*graphs;

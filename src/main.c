@@ -6,16 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:42:21 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 15:13:02 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 18:33:02 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-void	leaks(void)
-{
-	system("leaks so_long");
-}
 
 static mlx_t	*window_init(t_map *my_map)
 {
@@ -32,10 +27,11 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		ft_exit("argc");
-	atexit(leaks);
 	my_map = malloc(sizeof(t_map));
+	if (!my_map)
+		ft_exit("Error\nMalloc failed");
 	my_map->graphs = malloc(sizeof(t_graphs));
-	if (!my_map || !my_map->graphs)
+	if (!my_map->graphs)
 		ft_exit("Error\nMalloc failed");
 	init_map_struct(my_map);
 	if (check_map(my_map, argv) == 0)

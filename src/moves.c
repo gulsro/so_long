@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 12:18:59 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:45:57 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 17:52:36 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	move_check(t_map *my_map)
 		&& check_character(my_map, my_map->x_p_location,
 			my_map->y_p_location, 'E'))
 	{
+		my_map->exit_open = 1;
 		game_over(my_map);
 	}
 }

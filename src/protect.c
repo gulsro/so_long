@@ -6,7 +6,7 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:54:54 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 14:38:20 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 18:28:48 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ char	*protect_mem(char *map)
 mlx_texture_t	*protect_text(mlx_texture_t *elem)
 {
 	if (!elem)
-		ft_error("Texture cant be created");
+		ft_exit("Texture cant be created");
 	return (elem);
 }
 
 mlx_image_t	*protect_img(mlx_image_t *elem)
 {
 	if (!elem)
-		ft_error("Image cant be created");
+		ft_exit("Image cant be created");
 	return (elem);
 }
 
