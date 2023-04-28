@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	if (check_map(my_map, argv) == 0)
 	{
 		my_map->mlx = window_init(my_map);
+		background_to_window(my_map);
 		images_to_window(my_map);
 		ft_printf("height: %d\n", my_map->height_y);
 		mlx_key_hook(my_map->mlx, mlx_key_hook_callback, (void*)my_map);

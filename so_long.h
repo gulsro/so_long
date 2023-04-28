@@ -62,6 +62,7 @@ void	move_left(t_map *my_map);
 void	move_check(t_map *my_map);
 
 //image.c
+void    background_to_window(t_map *my_map);
 void	images_to_window(t_map *my_map);
 
 //init_map.c
@@ -91,9 +92,15 @@ int 	check_valid_chars_after_move(char **cpy_arr);
 
 //error_exit.c
 void	ft_exit(char *error_msg, int exit_code);
+void    ft_error(char *error_msg);
 
 //free.c
 void	free_map_arr(char **map_arr);
 void	free_textures(t_map *my_map);
+
+//protect.h
+mlx_texture_t	*protect_text(mlx_texture_t *elem);
+mlx_image_t     *protect_img(mlx_image_t *elem);
+void    protect_(int32_t elem);
 
 #endif

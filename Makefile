@@ -17,7 +17,8 @@ SRCS	= main.c \
 		  keys.c \
 		  moves_utils.c \
 		  moves.c \
-		  free.c
+		  free.c \
+		  protect.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)
