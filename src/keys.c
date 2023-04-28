@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:41:24 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 11:42:10 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 13:17:55 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	mlx_key_hook_callback(mlx_key_data_t keydata, void *param)
 {

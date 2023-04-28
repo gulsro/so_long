@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   error_exit.c                                       :+:    :+:            */
+/*   free.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/04/28 11:39:19 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:08:17 by gozturk       ########   odam.nl         */
+/*   Created: 2023/04/28 11:39:38 by gozturk       #+#    #+#                 */
+/*   Updated: 2023/04/28 12:44:13 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	ft_exit(char *error_msg, int exit_code)
+void	free_map_arr(char **map_arr)
 {
-	perror(error_msg);
-	exit(exit_code);
-}
+	int	i;
 
-void	ft_error(char *error_msg)
-{
-	perror(error_msg);
+	i = 0;
+	while (map_arr[i])
+	{
+		free(map_arr[i]);
+		i++;
+	}
+	free(map_arr);
 }

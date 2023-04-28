@@ -1,24 +1,24 @@
 NAME	= so_long
-CFLAGS	= -Wextra -Wall -Werror -g #-fsanitize=address
+CFLAGS	= -Wextra -Wall -Werror -g -fsanitize=address
 LIBMLX	= ./lib/MLX42
 LIBFT	= ./lib/libft/libft.a
 
 HEADERS	= -I ./lib/libft/ -I $(LIBMLX)/include/
 #LIBS	= $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.8/lib/"
 LIBS   = $(LIBMLX)/build/libmlx42.a -Iinclude -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit
-SRCS	= main.c \
-		  map_array.c \
-		  error_exit.c \
-		  map_check.c \
-		  map_utils.c \
-		  walkable_map.c \
-		  init_map.c \
-		  image.c \
-		  keys.c \
-		  moves_utils.c \
-		  moves.c \
-		  free.c \
-		  protect.c
+SRCS	= ./src/main.c \
+		  ./src/map_array.c \
+		  ./src/error_exit.c \
+		  ./src/map_check.c \
+		  ./src/map_utils.c \
+		  ./src/walkable_map.c \
+		  ./src/init_map.c \
+		  ./src/image.c \
+		  ./src/keys.c \
+		  ./src/moves_utils.c \
+		  ./src/moves.c \
+		  ./src/free.c \
+		  ./src/protect.c
 OBJS	= $(SRCS:.c=.o)
 
 all: libmlx $(NAME)

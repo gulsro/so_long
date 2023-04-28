@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:59:54 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:18:09 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 12:45:31 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	check_walls(t_map	*my_map)
 {

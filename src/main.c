@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:42:21 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 11:44:05 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 12:53:27 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 static mlx_t	*window_init(t_map *my_map)
 {
@@ -42,6 +42,6 @@ int	main(int argc, char **argv)
 		mlx_terminate(my_map->mlx);
 		free_map_arr(my_map->map_arr);
 	}
-	system("leaks so_long");
+//	system("leaks so_long");
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 12:18:33 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:18:48 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 12:45:44 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	map_scale(t_map *my_map)
 {

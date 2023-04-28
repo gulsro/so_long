@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 12:18:59 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:21:48 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 12:45:57 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	move_down(t_map *my_map)
 {

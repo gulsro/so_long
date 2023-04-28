@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:44:16 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 12:10:50 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 12:45:20 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	ft_strlen_protect(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: gozturk <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/28 11:36:42 by gozturk       #+#    #+#                 */
-/*   Updated: 2023/04/28 11:39:01 by gozturk       ########   odam.nl         */
+/*   Updated: 2023/04/28 12:46:32 by gozturk       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "so_long.h"
+#include  "../so_long.h"
 
 int	is_walkable(t_map *my_map, int x_pos, int y_pos)
 {
