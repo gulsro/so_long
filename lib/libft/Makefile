@@ -6,7 +6,7 @@
 #    By: gozturk <gozturk@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/11 18:39:50 by gozturk       #+#    #+#                  #
-#    Updated: 2023/04/28 13:46:28 by gozturk       ########   odam.nl          #
+#    Updated: 2023/04/28 13:52:22 by gozturk       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ SRCB = ft_lstnew_bonus.c \
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra 
 
 OBJ = $(SRC:.c=.o)
 
